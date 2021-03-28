@@ -1,0 +1,19 @@
+<button   class="btn btn-success" routerLink="/admin/process/addProcess"> <a class="fa fa-plus"></a> Agregar </button>
+
+<table class="table mt-2">
+    <thead class="thead-light">
+      <tr>
+        <th scope="col">#</th>
+        <th scope="col">Nombre</th>
+        <th scope="col">Descripcion</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr *ngFor="let item of list , index as i" > 
+        <th scope="row">{{i + 1 }}</th>
+        <td>{{item.name}}</td>
+        <td>{{item.description}}</td>
+      </tr>
+
+    </tbody>
+  </table>

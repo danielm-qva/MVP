@@ -24,9 +24,18 @@
               "src/assets"
             ],
             "styles": [
-              "src/styles.css"
+              "node_modules/bootstrap/dist/css/bootstrap.min.css",
+                    "src/styles.css",
+                    "src/assets/@fortawesome/fontawesome-free/css/all.min.css"
+                   
             ],
-            "scripts": []
+            "scripts": [
+              "node_modules/jquery/dist/jquery.min.js",
+              "node_modules/@popperjs/core/dist/umd/popper.min.js",
+              "node_modules/bootstrap/dist/js/bootstrap.min.js",
+               "src/assets/js/customer.js",
+               "src/assets/js/genarlFunt.js"
+            ]
           },
           "configurations": {
             "production": {

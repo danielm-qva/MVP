@@ -1,0 +1,52 @@
+  
+<div class="wrapper fadeInDown">
+  <div id="formContent">
+    <!-- Tabs Titles -->
+
+    <!-- Icon 
+      <div class="fadeIn first">
+        <img src="//" id="icon" alt="User Icon" />
+      </div>
+    -->
+
+    <!-- Login Form -->
+  
+    <form role="form" [formGroup]="fgValidator">
+
+      <div class="form-group mb-3 mt-5">
+        <div class="text-muted text-center mt-3"> <h4>Bienvenido a MVP </h4></div>
+      </div>
+
+
+      <div class="form-group mb-3 mt-5">
+       <input type="text"  class="fadeIn second form-control" formControlName="email"  placeholder="Email">
+       <div class="invalid" *ngIf="fgv.email.errors">
+        <strong *ngIf="fgv.email.errors.email">This field is format email</strong>
+        <strong *ngIf="fgv.email.errors.required">This field is required</strong>
+     </div>
+     </div>
+
+
+     <div class="form-group mb-3 mt-5 ">
+      <input type="password"  class="fadeIn third form-control" formControlName="password"  placeholder="password">
+      <div class="invalid" *ngIf="fgv.password.errors">
+        <strong *ngIf="fgv.password.errors.required">This field is required</strong>
+         <br>
+        <strong *ngIf="fgv.password.errors">this field si min lenght is 4</strong>
+     </div>
+    </div>
+       
+  
+        <button (click)="beginSession()" type="button"   class="btn btn-primary my-4 mr-2 fadeIn fourth">Login</button>
+        <button  type="button"  class="btn btn-primary my-4 fadeIn fourth">Regiter</button>
+    
+
+    </form>
+
+    <!-- Remind Passowrd -->
+    <div id="formFooter">
+      <a class="underlineHover" href="#">Forgot Password?</a>
+    </div>
+
+  </div>
+</div>

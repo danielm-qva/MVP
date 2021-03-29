@@ -42,6 +42,7 @@ export class LoginComponent implements OnInit {
       if (this.fgValidator.invalid) {
         modalmenssage("Relle los datos del formulario correctamente....");
       }
+
       else {
         this.user.email = this.fgv.email.value;
         this.user.pass = this.fgv.password.value;
@@ -49,6 +50,8 @@ export class LoginComponent implements OnInit {
         await this.serviceAuth.loggin(this.user).subscribe((data: any) => {
           this.user.token = data.data.token;
           this.serviceAuth.Autenticar(this.user.email, this.user.token);
+        } , error => {
+          modalmenssage("Ha ocurrido un error con sus Credenciales pro favor revize las misma....");
         })
       }
 

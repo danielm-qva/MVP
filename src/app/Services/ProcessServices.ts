@@ -1,6 +1,7 @@
 import { Injectable } from '@angular/core';
 import { HttpClient, HttpHeaders } from '@angular/common/http';
 import { Process } from '../Models/process';
+import { Observable } from 'rxjs';
 
 @Injectable({
     providedIn: 'root'
@@ -21,7 +22,7 @@ export class ProcessServices {
     }
 
    
-     getAllProcess(){
+     getAllProcess():Observable<Process[]>{
           return this._http.get<Process[]>(this.URL+'processes',{headers:this.header});
      }
 

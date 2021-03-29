@@ -6,6 +6,7 @@ import {
   } from '@angular/common/http';
   
   import { product } from "./../Models/products";
+import { Observable } from 'rxjs';
   
 
 
@@ -28,8 +29,8 @@ export class ProductService {
   
     constructor(private http: HttpClient) {}
   
-    getAllPorducts() {
-      return  this.http.get<product[]>(this.URL + 'products', {headers: this.header,})
+    getAllPorducts():Observable<product[]> {
+       return this.http.get<product[]>(this.URL + 'products', {headers: this.header,})
       }
   
     createProduct(product: product) {

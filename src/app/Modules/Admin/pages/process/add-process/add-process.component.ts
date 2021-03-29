@@ -26,6 +26,7 @@ export class AddProcessComponent implements OnInit {
       this.process.description = this.fgFrom.controls.descriptions.value;
        //console.log(this.fgFrom.controls.descriptions.value);
              this.srevice.getAddProcess(this.process).subscribe(res => {});
+             
            this.route.navigateByUrl("/admin/process/listProcess");
       
             this.ngOnDestroy();

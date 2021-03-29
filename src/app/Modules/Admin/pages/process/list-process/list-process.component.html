@@ -1,4 +1,4 @@
-<button   class="btn btn-success" routerLink="/admin/process/addProcess"> <a class="fa fa-plus"></a> Agregar </button>
+<button *ngIf="isAcitve()"  [routerLink]="['/admin', 'process' , 'addProcess']" class="btn " ><a class="fa fa-plus"></a></button>
 
 <table class="table mt-2">
     <thead class="thead-light">
@@ -6,13 +6,25 @@
         <th scope="col">#</th>
         <th scope="col">Nombre</th>
         <th scope="col">Descripcion</th>
+        <th scope="col">Acciones</th>
       </tr>
     </thead>
     <tbody>
       <tr *ngFor="let item of list , index as i" > 
-        <th scope="row">{{i + 1 }}</th>
+        <th scope="row">{{i + 1}}</th> 
         <td>{{item.name}}</td>
         <td>{{item.description}}</td>
+            
+        <td>
+          <button
+          class="btn btn-success btn-xs mr-1 ml-1"
+          [routerLink]="['/admin', 'process' , 'addProcess']">
+          <i class="fa fa-plus"></i>
+        </button>
+        <button (click)="delete_id(item.id)" class="btn btn-danger btn-md mr-1 ml-1">
+        <i class="fa fa-trash"></i>
+      </button>
+    </td>
       </tr>
 
     </tbody>

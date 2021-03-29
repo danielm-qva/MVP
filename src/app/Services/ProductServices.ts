@@ -12,7 +12,7 @@ import {
 @Injectable({
     providedIn: 'root'
 })
-export class ClienteService {
+export class ProductService {
 
 
     products: product[] = [];

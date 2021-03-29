@@ -9,11 +9,12 @@ import {ReactiveFormsModule , FormsModule } from '@angular/forms' ;
 
 //Services
 import {AuthService} from './Services/Auth';
-import { ClienteService }  from  './Services/ProductServices';
+import { ProductService  } from './Services/ProductServices';
 
 import { HttpClientModule } from '@angular/common/http';
 import { NavbarComponent } from './public/navbar/navbar.component';
 import { HomComponent } from './public/hom/hom.component';
+
 
 
 
@@ -30,9 +31,10 @@ import { HomComponent } from './public/hom/hom.component';
     AppRoutingModule,
     FormsModule,
     ReactiveFormsModule,
-    HttpClientModule
+    HttpClientModule,
+
   ],
-  providers: [AuthService , ClienteService],
+  providers: [AuthService , ProductService],
   bootstrap: [AppComponent]
 })
 export class AppModule { }

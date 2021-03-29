@@ -28,6 +28,9 @@ export class ProcessServices {
       getAddProcess(process:Process){
           return this._http.post<Process>(this.URL+'processes' ,{"process":{"name":process.name , "description":process.description}},{headers:this.header}) ;
       }
+      deleteProcess(id:string){
+           return this._http.delete(this.URL+'processes/'+id, {headers: this.header});
+      }
        
 
 }

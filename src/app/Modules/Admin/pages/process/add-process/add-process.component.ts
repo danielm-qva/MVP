@@ -14,6 +14,7 @@ export class AddProcessComponent implements OnInit {
 
     process:Process = new Process ;
       fgFrom: FormGroup ;
+      
   constructor(private fb:FormBuilder , private srevice:ProcessServices , private route:Router ) { }
 
   ngOnInit(): void {

@@ -1,1 +1,46 @@
-<p>list-product works!</p>
+<div class="container top">
+    <div class="row">
+      <div class="col-md-12 back">
+        <table class="table table-advance table-hover table-bordered mt-4">
+          <thead class="thead-light">
+            <tr>
+              <th scope="col">Nonbre Product</th>
+              <th scope="col">Categotrias</th>
+              <th scope="col">Valoracion</th>
+              <th scope="col">Aciones</th>
+            </tr>
+          </thead>
+          <tbody>
+
+            <tr *ngFor="let i of producto">
+      
+              <td>{{i.name}}</td>
+              
+              <td>
+                <ul>
+                  <li *ngFor="let a of i.factors">
+                   Nombre:{{a.name}} | Valor:{{a.value}} | Ponderacion:{{a.weighing}}
+                  </li>
+                </ul>
+                  
+                </td>
+                
+                <td>{{i.final_rating*100}}</td>
+                
+                <td>
+                  <button
+                  class="btn btn-success btn-xs mr-1 ml-1"
+                  [routerLink]="['/products', 'addproducts']">
+                  <i class="fa fa-plus"></i>
+                </button>
+                <button (click)="obtener(i.id)" class="btn btn-danger btn-md mr-1 ml-1">
+                <i class="fa fa-trash"></i>
+              </button>
+            </td>
+          </tr>
+        </tbody>
+      </table>
+    </div>
+  </div>
+</div>
+

@@ -1,1 +1,70 @@
-<p>add-product works!</p>
+<div class="wrapper fadeInDown">
+    <div id="formContent">
+
+    
+      <form role="form" [formGroup]="fromP"  (ngSubmit)="onSubmit()">
+  
+        <div class="form-group mb-3 mt-5">
+          <div class="text-muted text-center mt-3"> <h4>Crear Producto </h4></div>
+        </div>
+
+        <div class="form-group mb-3 mt-5">
+         <input type="text"  class="fadeIn second form-control" formControlName="name"  placeholder="Nombre Proceso">
+        <!-- 
+            <div class="invalid" *ngIf="fgFrom.controls.name.errors">
+                <strong *ngIf="fgFrom.controls.name.errors.required">This field is required</strong>
+            </div>
+        -->
+        </div>
+
+               <div class="box" *ngIf="!inLenghtList()">
+                     <ul>
+                           <li *ngFor="let i of faclist; let it=index">
+                                Factor({{it + 1}})--
+                             Nombre: {{i.name }},Valor:{{i.value}},Ponderacion: {{i.weighing}}
+                           </li>
+                     </ul>
+               </div>
+         
+             <button  (click)="activa = !activa"  *ngIf="!activa" class="btn btn-primary my-4 mr-2 ">Facotres</button>
+
+           
+           
+         <div *ngIf="activa" >
+            <div class="text-muted text-center mt-1"> <h4>Agregar Factores</h4></div>
+            
+            
+            
+             <form  [formGroup]="fromF" >
+                 <div class="form-group mb-3 mt-5">
+                     <input type="text"  class="fadeIn second form-control" formControlName="namef"  placeholder="Nombre Factor">
+                     
+                    </div>
+                    
+                    <div class="form-grup mb-3 mt5">
+                        <input type="number"  class="fadeIn second form-control" formControlName="valor"  placeholder="Valor">
+                    </div>
+                    <div class="form-grup mb-3 mt5">
+                        <input type="number"  class="fadeIn second form-control" formControlName="pon"  placeholder="Ponderacion">
+                    </div>
+                    
+                    <button  [disabled]="!fromP.valid" (click)="submit()" type="submit"  class="btn btn-primary my-4 mr-2 fadeIn fourth"> Agragar</button>
+                    <button (click)="activa = !activa" type="submit"  class="btn btn-primary my-4 mr-2 fadeIn fourth"> Terminar</button>
+                </form>
+                
+            </div>
+                
+                <!-- 
+                    
+               <div class="invalid" *ngIf="fgFrom.controls.descriptions.errors">
+                   <strong *ngIf="fgFrom.controls.descriptions.errors.required">This field is required</strong>
+                </div>
+            -->
+   
+          <button  type="submit"   class="btn btn-primary my-4 mr-2 fadeIn fourth">Crear</button>
+          <button  type="button"  class="btn btn-primary my-4 fadeIn fourth">Cancelar</button>
+      </form>
+  
+    </div>
+  </div>
+

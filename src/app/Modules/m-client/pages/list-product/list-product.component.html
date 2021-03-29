@@ -12,7 +12,7 @@
           </thead>
           <tbody>
 
-            <tr *ngFor="let i of producto">
+            <tr *ngFor="let i of producto |  paginate: { itemsPerPage: 3, currentPage: pages }">
       
               <td>{{i.name}}</td>
               
@@ -40,6 +40,10 @@
           </tr>
         </tbody>
       </table>
+      <pagination-controls (pageChange)="pages = $event"></pagination-controls>
+
+    
+
     </div>
   </div>
 </div>

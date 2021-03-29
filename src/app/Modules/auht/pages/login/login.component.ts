@@ -2,6 +2,8 @@ import { Component, OnInit } from '@angular/core';
 import { FormBuilder, Validators, FormGroup } from '@angular/forms';
 import { AuthService } from '../../../../Services/Auth';
 import { User } from '../../../../Models/User';
+ 
+
 
 declare const modalmenssage: any;
 

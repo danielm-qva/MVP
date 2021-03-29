@@ -12,9 +12,9 @@ declare const modalmenssage:any ;
   styleUrls: ['./list-product.component.css']
 })
 export class ListProductComponent implements OnInit {
-
-
-    producto:any = {}
+ 
+      pages: number = 1;
+     producto:any = {}
 
   constructor(private service:ProductService , private _route:Router) { }
 

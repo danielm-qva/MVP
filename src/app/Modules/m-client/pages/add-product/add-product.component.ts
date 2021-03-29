@@ -38,18 +38,6 @@ export class AddProductComponent implements OnInit {
   
   }
 
-  ngAfterViewInit(): void {
-   
-  
-
-  }
-
-  ngAfterContentChecked(): void {
-
-  
-  }
-
-
 
   onSubmit(){
    

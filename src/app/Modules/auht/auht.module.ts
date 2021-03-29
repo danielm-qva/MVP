@@ -8,13 +8,15 @@ import { RegisterComponent } from './pages/register/register.component';
 import {ReactiveFormsModule , FormsModule } from '@angular/forms' ;
 
 
+
 @NgModule({
   declarations: [LoginComponent, RegisterComponent],
   imports: [
     CommonModule,
     AuhtRoutingModule,
     ReactiveFormsModule ,
-    FormsModule
+    FormsModule,
+
   ]
 })
 export class AuhtModule { }

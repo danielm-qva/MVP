@@ -20,7 +20,7 @@ import { NavbarComponent } from './public/navbar/navbar.component';
 import { HomComponent } from './public/hom/hom.component';
 
 
-
+import { ToastrModule } from 'ngx-toastr';
 
 @NgModule({
   declarations: [
@@ -38,7 +38,8 @@ import { HomComponent } from './public/hom/hom.component';
     ReactiveFormsModule,
     HttpClientModule,
     NgxSpinnerModule,
-     BrowserAnimationsModule,
+     BrowserAnimationsModule,    
+     ToastrModule.forRoot(),
   ],
   schemas: [CUSTOM_ELEMENTS_SCHEMA],
   providers: [AuthService , ProductService],

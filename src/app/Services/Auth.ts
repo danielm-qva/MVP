@@ -44,4 +44,9 @@ export class AuthService {
      }
 
 
+      Register_user(user:User):Observable<any>{
+          return this.http.post<any>(this.URL+'users/register', { "user" : { "email" :user.email , "password" : user.pass}});
+      }
+
+
 }

@@ -40,9 +40,7 @@ export class AddProductComponent implements OnInit {
 
 
   onSubmit(){
-   
-         console.log(this.fromP.valid);
-
+        
     this.products.name = this.fromP.controls.name.value ;
      this.products.factors = this.faclist ;
 

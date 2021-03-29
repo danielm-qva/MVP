@@ -53,13 +53,7 @@ export class ListProcessComponent implements OnInit {
       });
    }
 
-   
- showSpinner() {
-    this.spinner.show();
-    setTimeout(() => {
-      this.spinner.hide();
-    }, 3000);
-  }
+
 
 
 

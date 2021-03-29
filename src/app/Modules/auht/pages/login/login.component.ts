@@ -2,7 +2,8 @@ import { Component, OnInit } from '@angular/core';
 import { FormBuilder, Validators, FormGroup } from '@angular/forms';
 import { AuthService } from '../../../../Services/Auth';
 import { User } from '../../../../Models/User';
- 
+
+import { ToastrService } from 'ngx-toastr';
 
 
 declare const modalmenssage: any;
@@ -19,7 +20,7 @@ export class LoginComponent implements OnInit {
   user: User = new User();
   fgValidator: FormGroup;
 
-  constructor(private fb: FormBuilder, private serviceAuth: AuthService) {
+  constructor(private fb: FormBuilder, private serviceAuth: AuthService , private toastr:ToastrService) {
 
   }
 
@@ -52,6 +53,7 @@ export class LoginComponent implements OnInit {
         await this.serviceAuth.loggin(this.user).subscribe((data: any) => {
           this.user.token = data.data.token;
           this.serviceAuth.Autenticar(this.user.email, this.user.token);
+              this.showSuccess();
         } , error => {
           modalmenssage("Ha ocurrido un error con sus Credenciales pro favor revize las misma....");
         })
@@ -70,5 +72,10 @@ export class LoginComponent implements OnInit {
     return this.fgValidator.controls;
   }
 
+  showSuccess() {
+    this.toastr.success('Bienvendio a MVP', 'Boots MVP' , {
+       timeOut:3000
+    });
+  }
 
 }

@@ -2,6 +2,8 @@ import { NgModule ,CUSTOM_ELEMENTS_SCHEMA  } from '@angular/core';
 import { CommonModule } from '@angular/common';
 
 import { AdminRoutingModule } from './admin-routing.module';
+
+//Component
 import { ListProviderComponent } from './pages/provider/list-provider/list-provider.component';
 import { AddProviderComponent } from './pages/provider/add-provider/add-provider.component';
 import { ListProcessComponent } from './pages/process/list-process/list-process.component';

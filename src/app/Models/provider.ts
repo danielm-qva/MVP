@@ -1,5 +1,7 @@
-export class Provicer{
-    name:String;
-    distance_km:Number;
-    location:String ;
+
+export class Provider{
+     id:String;
+     name:String ;
+     distance_km:Number;
+     location:String ;
 }

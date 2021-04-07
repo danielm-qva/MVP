@@ -23,6 +23,7 @@
     "bootstrap": "^4.6.0",
     "jquery": "^3.5.1",
     "mdb-cli": "^3.1.2",
+    "ngx-loading-x": "^1.0.3",
     "ngx-pagination": "^5.0.0",
     "ngx-spinner": "^11.0.0",
     "ngx-toastr": "^13.2.1",

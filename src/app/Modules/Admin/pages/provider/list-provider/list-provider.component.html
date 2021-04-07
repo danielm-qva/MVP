@@ -1,21 +1,28 @@
 
-
 <button class="btn btn-success" routerLink="/admin/provider/addProvider"> <a class="fa fa-plus"></a> Agregar </button>
 
 <table class="table mt-2">
     <thead class="thead-light">
       <tr>
-        <th scope="col">#</th>
         <th scope="col">Nombre</th>
-        <th scope="col">Descripcion</th>
+        <th scope="col">Distancia</th>
+        <th scope="col">Localizacion</th>
+        <th scope="col">Accion</th>
       </tr>
     </thead>
     <tbody>
-      <tr * > 
-        <th scope="row">asds</th>
-        <td>fgfg</td>
-        <td>sdsd</td>
+      <tr  *ngFor="let i of listProvedor ; " > 
+        <th scope="row">{{i.name}}</th>
+        <td>{{i.distance_km}}</td>
+        <td>{{i.location}}</td>
+        <td>
+          <button (click)="delete(i.id)" class="btn btn-danger btn-md mr-1 ml-1">
+            <i class="fa fa-trash"></i>
+          </button>
+        </td>
       </tr>
 
     </tbody>
   </table>
+
+  <ngx-loading-x  [show]="isActiva"> </ngx-loading-x>

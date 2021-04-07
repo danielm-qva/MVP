@@ -9,6 +9,8 @@ import { AddProcessComponent } from './pages/process/add-process/add-process.com
 
 import {NgxPaginationModule} from 'ngx-pagination' ;
 import {ReactiveFormsModule , FormsModule} from '@angular/forms' ;
+
+import { NgxLoadingXModule } from 'ngx-loading-x'
  
 
 
@@ -21,8 +23,7 @@ import {ReactiveFormsModule , FormsModule} from '@angular/forms' ;
     ReactiveFormsModule,
     FormsModule,
     NgxPaginationModule,
-
+    NgxLoadingXModule
   ],
-  schemas: [CUSTOM_ELEMENTS_SCHEMA],
 })
 export class AdminModule { }

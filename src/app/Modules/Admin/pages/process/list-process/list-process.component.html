@@ -1,36 +1,41 @@
-<button *ngIf="isAcitve()"  [routerLink]="['/admin', 'process' , 'addProcess']" class="btn " ><a class="fa fa-plus"></a></button>
-<ngx-spinner bdColor = "rgba(0, 0, 0, 0.8)" size = "default" color = "#fff" type = "square-jelly-box" [fullScreen] = "true"><p style="color: white" > Loading... </p></ngx-spinner>
+
+
+
+<div style="display: inline-block;">
+
+  <button *ngIf="isAcitve()" [routerLink]="['/admin', 'process' , 'addProcess']" class="btn "><a
+    class="fa fa-plus"></a></button>
+    
+   </div>
 
 <table class="table mt-2">
-    <thead class="thead-light">
-      <tr>
-        <th scope="col">#</th>
-        <th scope="col">Nombre</th>
-        <th scope="col">Descripcion</th>
-        <th scope="col">Acciones</th>
-      </tr>
-    </thead>
-    <tbody>
-      <tr *ngFor="let item of list | paginate: { itemsPerPage: 3, currentPage: pages } , let i = index" > 
-            <td>{{i + 1}}</td>
-        <td >{{item.name}}</td>
-        <td>{{item.description}}</td>
-            
-        <td>
-          <button
-          class="btn btn-success btn-xs mr-1 ml-1"
-          [routerLink]="['/admin', 'process' , 'addProcess']">
+  <thead class="thead-light">
+    <tr>
+      <th scope="col">#</th>
+      <th scope="col">Nombre</th>
+      <th scope="col">Descripcion</th>
+      <th scope="col">Acciones</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr *ngFor="let item of list | paginate: { itemsPerPage: 3, currentPage: pages } , let i = index">
+      <td>{{i + 1}}</td>
+      <td>{{item.name}}</td>
+      <td>{{item.description}}</td>
+
+      <td>
+        <button class="btn btn-success btn-xs mr-1 ml-1" [routerLink]="['/admin', 'process' , 'addProcess']">
           <i class="fa fa-plus"></i>
         </button>
         <button (click)="delete_id(item.id)" class="btn btn-danger  mr-1 ml-1">
-        <i class="fa fa-trash"></i>
-      </button>
-    </td>
-      </tr>
+          <i class="fa fa-trash"></i>
+        </button>
+      </td>
+    </tr>
 
-    </tbody>
-  </table>
+  </tbody>
+</table>
 
-  <pagination-controls (pageChange)="pages = $event"></pagination-controls>
-  
+<ngx-loading-x  [show]="isActivar"> </ngx-loading-x>
 
+<pagination-controls (pageChange)="pages = $event"></pagination-controls>

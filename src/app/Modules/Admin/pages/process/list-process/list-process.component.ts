@@ -4,8 +4,7 @@ import { Process } from '../../../../../Models/process';
 import { Router } from '@angular/router';
 
 
-import { NgxSpinnerService } from "ngx-spinner";
-
+import  { ToastrService } from 'ngx-toastr';
 
 declare const modalmenssage: any;
 
@@ -16,16 +15,19 @@ declare const modalmenssage: any;
 })
 export class ListProcessComponent implements OnInit {
 
+   isActivar: boolean;
    pages: number = 1;
    list: Process[] = [];
    process: Process = new Process;
    activa: boolean = true;
 
-   constructor(private service: ProcessServices, private _route: Router, private spinner: NgxSpinnerService) { }
+   constructor(private service: ProcessServices, private _route: Router , private toast:ToastrService) { }
 
    ngOnInit() {
+      this.isActivar = true;
       this.getAllProcess();
    }
+
 
    isAcitve() {
       return (this.list.length == 0) ? true : false;
@@ -35,6 +37,9 @@ export class ListProcessComponent implements OnInit {
    getAllProcess() {
       this.service.getAllProcess().subscribe((res: any) => {
          this.list = res.data;
+         setTimeout(() => {
+            this.isActivar = false;
+         }, 800);
 
       }, error => {
          modalmenssage("Ha ocurrido un error al recuperar los datos...");
@@ -45,15 +50,37 @@ export class ListProcessComponent implements OnInit {
 
 
    delete_id(id: string) {
+      this.isActivar = true ;
       this.service.deleteProcess(id).subscribe(res => {
-         modalmenssage("Has eliminar correctamente...");
+          this.shoowMessas();
          this.getAllProcess();
       }, error => {
-         modalmenssage("Ha ocurrido un erro al tratar de eliminar....");
+         this.showwFali();
+         setTimeout(() => {
+            this.isActivar = false;
+         }, 800);
+
+       
       });
    }
 
 
+   lengtProductoArrays() {
+      return (this.list.length == 0) ? true : false;
+   }
+
+
+   shoowMessas() {
+      this.toast.success('Has Eliminado un Proceso', 'Boots MVP', {
+        timeOut: 2000
+      })
+    }
+  
+    showwFali() {
+      this.toast.error('Ha ocurrido un error al eliminar el Proceso..... Intentelo una vez mas....', 'Boots MVP', {
+        timeOut: 2000
+      })
+    }
 
 
 

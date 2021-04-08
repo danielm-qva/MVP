@@ -1,37 +1,40 @@
-  
 <div class="wrapper fadeInDown">
-    <div id="formContent">
-      <!-- Tabs Titles -->
-  
-    
-    
-      <form role="form" [formGroup]="fgFrom">
-  
-        <div class="form-group mb-3 mt-5">
-          <div class="text-muted text-center mt-3"> <h4>Crear Proceso </h4></div>
+  <div id="formContent">
+    <!-- Tabs Titles -->
+
+
+
+    <form role="form" [formGroup]="fgFrom">
+
+      <div class="form-group mb-3 mt-5">
+        <div class="text-muted text-center mt-3">
+          <h4>Crear Proceso </h4>
         </div>
-  
-  
-        <div class="form-group mb-3 mt-5">
-         <input type="text"  class="fadeIn second form-control" formControlName="name"  placeholder="Nombre Proceso">
-         <div class="invalid" *ngIf="fgFrom.controls.name.errors">
+      </div>
+
+
+      <div class="form-group mb-3 mt-5">
+        <input type="text" class="fadeIn second form-control" formControlName="name" placeholder="Nombre Proceso">
+        <div class="invalid" *ngIf="fgFrom.controls.name.errors">
           <strong *ngIf="fgFrom.controls.name.errors.required">This field is required</strong>
-       </div>
-       </div>
-       <div class="form-group mb-3 mt-5">
-           <textarea class="fadeIn second form-control" formControlName="descriptions"  placeholder="Descripcion">
+        </div>
+      </div>
+      
+      <div class="form-group mb-3 mt-5">
+        <textarea class="fadeIn second form-control" formControlName="descriptions" placeholder="Descripcion">
            </textarea>
         <div class="invalid" *ngIf="fgFrom.controls.descriptions.errors">
-         <strong *ngIf="fgFrom.controls.descriptions.errors.required">This field is required</strong>
+          <strong *ngIf="fgFrom.controls.descriptions.errors.required">This field is required</strong>
+        </div>
       </div>
-      </div>
- 
-          <button (click)="hola()" type="button"   class="btn btn-primary my-4 mr-2 fadeIn fourth">Agregar</button>
-          <button  [routerLink]="['/admin' , 'process' , 'listProcess']" type="button"  class="btn btn-primary my-4 fadeIn fourth">Cancelar</button>
-      
-  
-      </form>
-  
-      
-    </div>
+
+      <button (click)="hola()" type="button" class="btn btn-primary my-4 mr-2 fadeIn fourth">Agregar</button>
+      <button [routerLink]="['/admin' , 'process' , 'listProcess']" type="button"
+        class="btn btn-primary my-4 fadeIn fourth">Cancelar</button>
+
+
+    </form>
+
+
   </div>
+</div>

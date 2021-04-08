@@ -42,7 +42,7 @@ export class ListProcessComponent implements OnInit {
          }, 800);
 
       }, error => {
-         modalmenssage("Ha ocurrido un error al recuperar los datos...");
+            this.showwFali();
          this._route.navigateByUrl('/home');
       })
 
@@ -77,7 +77,7 @@ export class ListProcessComponent implements OnInit {
     }
   
     showwFali() {
-      this.toast.error('Ha ocurrido un error al eliminar el Proceso..... Intentelo una vez mas....', 'Boots MVP', {
+      this.toast.error('Ha ocurrido un error..... Intentelo una vez mas....', 'Boots MVP', {
         timeOut: 2000
       })
     }

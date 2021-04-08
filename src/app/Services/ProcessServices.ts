@@ -32,7 +32,14 @@ export class ProcessServices {
       
       deleteProcess(id:string){
            return this._http.delete(this.URL+'processes/'+id, {headers: this.header});
+    }
+
+      AddProvider_Process(a:Object){
+          console.log({"process_provider" : a});
+          return this._http.post(this.URL + 'processes/add_provider' , {"process_provider": a } , {headers:this.header});
       }
        
+
+
 
 }

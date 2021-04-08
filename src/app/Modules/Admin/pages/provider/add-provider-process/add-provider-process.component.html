@@ -1,0 +1,53 @@
+<ngx-loading-x [show]="isActivar"></ngx-loading-x>
+
+<div class="wrapper fadeInDown">
+    <div id="formContent">
+
+
+        <form [formGroup]="formProc_Provid">
+
+
+            <div class="form-group mb-3 mt-5">
+                <div class="text-muted text-center mt-3">
+                    <h4>Asignar un Provedor al Proceso </h4>
+                </div>
+            </div>
+
+
+
+            <div class="form-group">
+                <label>Selecciona el Proveedor</label>
+                <select class="form-control" id="selectProvedor" formControlName="select1">
+                    <option *ngFor="let item of listaProvedore" value="{{item.id}}">{{item.name}}</option>
+                </select>
+            </div>
+
+
+            <div class="form-group">
+                <label for="exampleFormControlSelect1">Selecciona el Proceso</label>
+                <select class="form-control" id="selectProcess" formControlName="select2">
+                    <option *ngFor="let i of listaProcess" value="{{i.id}}">{{i.name}}</option>
+                </select>
+            </div>
+
+            <div class="form-group mb-3 mt-5">
+                <input type="text" class="fadeIn second form-control" formControlName="good"
+                    placeholder="Good">
+            </div>
+
+            <div class="form-group mb-3 mt-5">
+                <input type="text" class="fadeIn second form-control" formControlName="tons"
+                    placeholder="tons">
+            </div>
+                
+            <div class="form-group mb-3 mt-5">
+                <input type="text" class="fadeIn second form-control" formControlName="year"
+                    placeholder="year">
+            </div>
+
+
+            <button (click)="enviar()" type="button" class="btn btn-primary my-4 mr-2 fadeIn fourth">Agregar</button>
+        </form>
+
+    </div>
+</div>

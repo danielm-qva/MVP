@@ -18,7 +18,7 @@ export class ListProviderComponent implements OnInit {
 
   listProvedor: Provider[] = [];
 
-  constructor(private _services: ProvedorService, private toast: ToastrService , private _router:Router) {
+  constructor(private _services: ProvedorService, private toast: ToastrService, private _router: Router) {
 
   }
 
@@ -36,10 +36,10 @@ export class ListProviderComponent implements OnInit {
       setTimeout(() => {
         this.isActiva = false
       }, 800);
-   
+
     }, error => {
-       this.showwFali();
-       setTimeout(() => {
+      this.showwFali();
+      setTimeout(() => {
         this.isActiva = false
       }, 800);
       this._router.navigateByUrl('/home');
@@ -72,7 +72,7 @@ export class ListProviderComponent implements OnInit {
     })
   }
 
-  
+
 
 
 }

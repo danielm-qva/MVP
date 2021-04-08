@@ -12,13 +12,14 @@ import { AddProcessComponent } from './pages/process/add-process/add-process.com
 import {NgxPaginationModule} from 'ngx-pagination' ;
 import {ReactiveFormsModule , FormsModule} from '@angular/forms' ;
 
-import { NgxLoadingXModule } from 'ngx-loading-x'
+import { NgxLoadingXModule } from 'ngx-loading-x';
+import { AddProviderProcessComponent } from './pages/provider/add-provider-process/add-provider-process.component'
  
 
 
 
 @NgModule({
-  declarations: [ListProviderComponent, AddProviderComponent, ListProcessComponent, AddProcessComponent],
+  declarations: [ListProviderComponent, AddProviderComponent, ListProcessComponent, AddProcessComponent, AddProviderProcessComponent],
   imports: [
     CommonModule,
     AdminRoutingModule,

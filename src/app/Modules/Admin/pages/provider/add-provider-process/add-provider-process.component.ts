@@ -53,12 +53,15 @@ export class AddProviderProcessComponent implements OnInit {
         "number_supplies_year": this.formProc_Provid.controls.year.value
       };
 
-   // console.log({process_provider});
-
+    console.log({process_provider});
+   
     this.servicesPorcess.AddProvider_Process(process_provider).subscribe(  (res: any) => {
-      console.log(res);
+    
+        this.showSucce();
+        this._router.navigateByUrl('/admin/process/listProcess');
     }, error => {
-        console.log(error);
+         this.showwFali();
+         this.formProc_Provid.reset();
     })
    
   }
@@ -92,9 +95,15 @@ export class AddProviderProcessComponent implements OnInit {
   }
 
 
+  showSucce(){
+     this.toast.success('Has realizado la operacion satifactoriamente..', 'Boot MVP' ,{
+       timeOut:1000
+     })
+  }
+
 
   showwFali() {
-    this.toast.error('Ha ocurrido un error..... Intentelo una vez mas....', 'Boots MVP', {
+    this.toast.error('Ha ocurrido un error.....Intentelo una vez mas....', 'Boots MVP', {
       timeOut: 2000
     })
   }

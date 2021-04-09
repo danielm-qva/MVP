@@ -4,9 +4,9 @@ import { Process } from '../../../../../Models/process';
 import { Router } from '@angular/router';
 
 
-import  { ToastrService } from 'ngx-toastr';
+import { ToastrService } from 'ngx-toastr';
 
-declare const modalmenssage: any;
+declare const  ModalProvider_Process:any ;
 
 @Component({
    selector: 'app-list-process',
@@ -16,12 +16,13 @@ declare const modalmenssage: any;
 export class ListProcessComponent implements OnInit {
 
    isActivar: boolean;
+     listProvedor:Object[] = [] ;
    pages: number = 1;
    list: Process[] = [];
    process: Process = new Process;
    activa: boolean = true;
 
-   constructor(private service: ProcessServices, private _route: Router , private toast:ToastrService) { }
+   constructor(private service: ProcessServices, private _route: Router, private toast: ToastrService) { }
 
    ngOnInit() {
       this.isActivar = true;
@@ -42,25 +43,37 @@ export class ListProcessComponent implements OnInit {
          }, 800);
 
       }, error => {
-            this.showwFali();
+         this.showwFali();
          this._route.navigateByUrl('/home');
       })
 
    }
 
 
+   Obtener_Provedor(id:string , name:string){
+       this.service.getProvedor_Process(id).subscribe((res:any) => {
+          console.log(res.data);
+          this.listProvedor = res.data ;
+          ModalProvider_Process( this.listProvedor , name );
+       });
+   }
+
+
+
+
    delete_id(id: string) {
-      this.isActivar = true ;
+      this.isActivar = true;
       this.service.deleteProcess(id).subscribe(res => {
-          this.shoowMessas();
+         this.shoowMessas();
          this.getAllProcess();
+
       }, error => {
          this.showwFali();
          setTimeout(() => {
             this.isActivar = false;
          }, 800);
 
-       
+
       });
    }
 
@@ -72,15 +85,15 @@ export class ListProcessComponent implements OnInit {
 
    shoowMessas() {
       this.toast.success('Has Eliminado un Proceso', 'Boots MVP', {
-        timeOut: 2000
+         timeOut: 2000
       })
-    }
-  
-    showwFali() {
+   }
+
+   showwFali() {
       this.toast.error('Ha ocurrido un error..... Intentelo una vez mas....', 'Boots MVP', {
-        timeOut: 2000
+         timeOut: 2000
       })
-    }
+   }
 
 
 

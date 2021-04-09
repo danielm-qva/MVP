@@ -7,22 +7,26 @@ import { ListProviderComponent } from './pages/provider/list-provider/list-provi
 import { AddProcessComponent } from './pages/process/add-process/add-process.component';
 import { ListProcessComponent } from './pages/process/list-process/list-process.component';
 import { AddProviderProcessComponent } from './pages/provider/add-provider-process/add-provider-process.component';
+import { ListProvProcessComponent } from './pages/process/list-prov-process/list-prov-process.component';
 
 
 const routes: Routes = [
- 
-   {path:'provider' ,children:[
-       {path:'addProvider' ,component:AddProviderComponent},
-       {path:'listProvider' , component:ListProviderComponent}
-   ]},
-    {
-        path:'process' ,children:[
-          {path:'addProcess' , component:AddProcessComponent},
-           {path:'listProcess' , component:ListProcessComponent}
-        ]
-    },
-    {path : 'proces_provider' , component:AddProviderProcessComponent}
-   
+
+  {
+    path: 'provider', children: [
+      { path: 'addProvider', component: AddProviderComponent },
+      { path: 'listProvider', component: ListProviderComponent }
+    ]
+  },
+  {
+    path: 'process', children: [
+      { path: 'addProcess', component: AddProcessComponent },
+      { path: 'listProcess', component: ListProcessComponent },
+      { path: 'listProvProcess', component: ListProvProcessComponent }
+    ]
+  },
+  { path: 'proces_provider', component: AddProviderProcessComponent }
+
 ];
 
 @NgModule({

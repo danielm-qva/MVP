@@ -28,6 +28,7 @@ import { StoreModule } from '@ngrx/store';
 import { ToastrModule } from 'ngx-toastr';
 
 import { ModalReducer } from './Redux/Modal/modal.reducer';
+import { NgbModule } from '@ng-bootstrap/ng-bootstrap';
 
 
 @NgModule({
@@ -48,7 +49,8 @@ import { ModalReducer } from './Redux/Modal/modal.reducer';
     NgxLoadingXModule,
     ToastrModule.forRoot(),
     BrowserAnimationsModule,
-    StoreModule.forRoot({ lista: ModalReducer })
+    StoreModule.forRoot({ lista: ModalReducer }),
+    NgbModule
   ],
   providers: [AuthService, ProductService, ProvedorService],
   bootstrap: [AppComponent]

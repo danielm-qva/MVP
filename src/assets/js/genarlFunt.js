@@ -51,7 +51,7 @@ function modalmenssage(mensaje) {
      $('#messagemodal').modal('toggle');
 
      $('#messagemodal').on('hide.bs.modal', function (e) {
-            lista = [] 
+            alert("hola");
      });
 
 }

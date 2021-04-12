@@ -2,7 +2,7 @@ import { Component, OnInit } from '@angular/core';
 import { ProcessServices } from '../../../../../Services/ProcessServices';
 import { Process } from '../../../../../Models/process';
 import { Router } from '@angular/router';
-
+import { NgbModal } from '@ng-bootstrap/ng-bootstrap';
 
 import { ToastrService } from 'ngx-toastr';
 
@@ -22,9 +22,14 @@ export class ListProcessComponent implements OnInit {
    process: Process = new Process;
    activa: boolean = true;
 
-   constructor(private service: ProcessServices, private _route: Router, private toast: ToastrService) { }
+
+    
+
+   constructor(private service: ProcessServices, private _route: Router, private toast: ToastrService, private modalService: NgbModal) { }
+
 
    ngOnInit() {
+
       this.isActivar = true;
       this.getAllProcess();
    }
@@ -49,13 +54,18 @@ export class ListProcessComponent implements OnInit {
 
    }
 
-
-   Obtener_Provedor(id: string, name: string) {
-      this.service.getProvedor_Process(id).subscribe((res: any) => {
+  async  Obtener_Provedor(id: string, name: string , longContent ) {
+              this.isActivar = true ;
+      await this.service.getProvedor_Process(id).subscribe((res: any) => {
          console.log(res.data);
-         this.listProvedor = res.data;
-         ModalProvider_Process(this.listProvedor, name);
-      });
+          this.listProvedor = res.data;
+         });
+         setTimeout(()=>{
+              this.isActivar=false ;
+         }, 1000);
+
+         this.modalService.open(longContent);
+         this.listProvedor = [] ;
    }
 
 
@@ -68,6 +78,7 @@ export class ListProcessComponent implements OnInit {
          this.getAllProcess();
 
       }, error => {
+
          this.showwFali();
          setTimeout(() => {
             this.isActivar = false;
@@ -76,6 +87,7 @@ export class ListProcessComponent implements OnInit {
 
       });
    }
+
 
 
    lengtProductoArrays() {

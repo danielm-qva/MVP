@@ -12,6 +12,33 @@
    </div>
 
 <table class="table mt-2">
+
+  <ng-template #longContent let-modal>
+    <div class="modal-header">
+      <h4 class="modal-title">Proveedores</h4>
+      <button type="button" class="close" aria-label="Close" (click)="modal.dismiss('Cross click')">
+        <span aria-hidden="true">&times;</span>
+      </button>
+    </div>
+    <div class="modal-body" >
+            <div *ngFor="let item of listProvedor" >
+                <h2>{{item.provider_name}}</h2>
+              <ul>
+                <li>Localizacion : {{item.location}}</li>
+                <li>Distancia : {{item.distance_km}} KM</li>
+                <li>Tipo Bienes : {{item.goods_type}} </li>
+  
+              </ul>
+            </div>
+    </div>
+    <div class="modal-footer">
+      <button type="button" class="btn btn-light" (click)="modal.close('Close click')">Close</button>
+    </div>
+  </ng-template>
+
+
+  
+
   <thead class="thead-light">
     <tr>
       <th scope="col">#</th>
@@ -33,10 +60,9 @@
         <button (click)="delete_id(item.id)" class="btn btn-danger  mr-1 ml-1">
           <i class="fa fa-trash"></i>
         </button>
-        <button (click)="Obtener_Provedor(item.id , item.name)"  class="btn btn-info  mr-1 ml-1">
+        <button (click)="Obtener_Provedor(item.id , item.name , longContent)"  class="btn btn-info  mr-1 ml-1">
           <i class="fa fa-briefcase"></i>
         </button>
-        
       </td>
     </tr>
 
@@ -46,3 +72,7 @@
 <ngx-loading-x  [show]="isActivar"> </ngx-loading-x>
 
 <pagination-controls (pageChange)="pages = $event"></pagination-controls>
+
+
+
+

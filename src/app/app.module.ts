@@ -21,7 +21,13 @@ import { NavbarComponent } from './public/navbar/navbar.component';
 import { HomComponent } from './public/hom/hom.component';
 
 
+//redux 
+import { StoreModule } from '@ngrx/store';
+
+
 import { ToastrModule } from 'ngx-toastr';
+
+import { ModalReducer } from './Redux/Modal/modal.reducer';
 
 
 @NgModule({
@@ -41,7 +47,8 @@ import { ToastrModule } from 'ngx-toastr';
     HttpClientModule,
     NgxLoadingXModule,
     ToastrModule.forRoot(),
-    BrowserAnimationsModule
+    BrowserAnimationsModule,
+    StoreModule.forRoot({ lista: ModalReducer })
   ],
   providers: [AuthService, ProductService, ProvedorService],
   bootstrap: [AppComponent]

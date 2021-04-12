@@ -16,9 +16,8 @@ function modalmenssage(mensaje) {
 
      for (let a = 0; a < lista.length; a++) {
 
-     document.querySelector('#mensajetexto').innerHTML += '<li>'+lista[a].provider_name+'</li>' ;
 
-/*
+
           const framento = document.createDocumentFragment();
           const framentodiv = document.createDocumentFragment();
 
@@ -43,7 +42,7 @@ function modalmenssage(mensaje) {
 
           listaul.appendChild(framentodiv);
           listaul.appendChild(framento);
-          listaul.appendChild(hrr);*/
+          listaul.appendChild(hrr);
           
 
      }
@@ -52,7 +51,7 @@ function modalmenssage(mensaje) {
      $('#messagemodal').modal('toggle');
 
      $('#messagemodal').on('hide.bs.modal', function (e) {
-          
+            lista = [] 
      });
 
 }

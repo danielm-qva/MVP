@@ -10,7 +10,6 @@ import { AuthService } from './Services/Auth';
 export class AppComponent  {
   title = 'mvp';
    
-  $saber:Boolean ;
    
 constructor(public service:AuthService){
 

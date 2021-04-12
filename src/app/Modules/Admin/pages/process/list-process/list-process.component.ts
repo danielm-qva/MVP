@@ -6,7 +6,7 @@ import { Router } from '@angular/router';
 
 import { ToastrService } from 'ngx-toastr';
 
-declare const  ModalProvider_Process:any ;
+declare const ModalProvider_Process: any;
 
 @Component({
    selector: 'app-list-process',
@@ -16,7 +16,7 @@ declare const  ModalProvider_Process:any ;
 export class ListProcessComponent implements OnInit {
 
    isActivar: boolean;
-     listProvedor:Object[] = [] ;
+   listProvedor: any = [];
    pages: number = 1;
    list: Process[] = [];
    process: Process = new Process;
@@ -50,12 +50,12 @@ export class ListProcessComponent implements OnInit {
    }
 
 
-   Obtener_Provedor(id:string , name:string){
-       this.service.getProvedor_Process(id).subscribe((res:any) => {
-          console.log(res.data);
-          this.listProvedor = res.data ;
-          ModalProvider_Process( this.listProvedor , name );
-       });
+   Obtener_Provedor(id: string, name: string) {
+      this.service.getProvedor_Process(id).subscribe((res: any) => {
+         console.log(res.data);
+         this.listProvedor = res.data;
+         ModalProvider_Process(this.listProvedor, name);
+      });
    }
 
 

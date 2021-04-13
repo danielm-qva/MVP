@@ -4,17 +4,26 @@
 <form role="form" [formGroup]="fromRegis">
 
     <div class="form-group mb-3 mt-5">
-      <div class="text-muted text-center mt-3"> <h4>Registres en..... MVP </h4></div>
+      <div class="text-muted text-center mt-3"> <h4>Registrece en..... MVP </h4></div>
     </div>
 
 
     <div class="form-group mb-3 mt-5">
      <input type="text"  class="fadeIn second form-control" formControlName="email"  placeholder="Email">
+     <div class="invalid" *ngIf="fromRegis.controls.email.errors">
+      <strong *ngIf="fromRegis.controls.email.errors.email">This field is format email</strong>
+      <strong *ngIf="fromRegis.controls.email.errors.required">This field is required</strong>
+   </div>
     </div>
 
 
    <div class="form-group mb-3 mt-5 ">
     <input type="password"  class="fadeIn third form-control" formControlName="pass"  placeholder="password">
+    <div class="invalid" *ngIf="fromRegis.controls.pass.errors">
+      <strong *ngIf="fromRegis.controls.pass.errors.required">This field is required</strong>
+       <br>
+      <strong *ngIf="fromRegis.controls.pass.errors">this field si min lenght is 11</strong>
+   </div>
   </div>
      
 

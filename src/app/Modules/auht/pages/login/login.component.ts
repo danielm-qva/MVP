@@ -5,10 +5,7 @@ import { User } from '../../../../Models/User';
 
 import { ToastrService } from 'ngx-toastr';
 
-
-declare const modalmenssage: any;
-
-@Component({ 
+@Component({
   selector: 'app-login',
   templateUrl: './login.component.html',
   styleUrls: ['./login.component.css']
@@ -20,7 +17,7 @@ export class LoginComponent implements OnInit {
   user: User = new User();
   fgValidator: FormGroup;
 
-  constructor(private fb: FormBuilder, private serviceAuth: AuthService , private toastr:ToastrService) {
+  constructor(private fb: FormBuilder, private serviceAuth: AuthService, private toastr: ToastrService) {
 
   }
 
@@ -34,35 +31,36 @@ export class LoginComponent implements OnInit {
   beginForm() {
     this.fgValidator = this.fb.group({
       email: ['', [Validators.required, Validators.email]],
-      password: ['', [Validators.required, Validators.minLength(4)]]
+      password: ['', [Validators.required, Validators.minLength(11)]]
     });
   }
 
 
   async beginSession() {
- 
+
     try {
       if (this.fgValidator.invalid) {
-        modalmenssage("Relle los datos del formulario correctamente....");
+       this.showError1();
       }
 
       else {
         this.user.email = this.fgv.email.value;
         this.user.pass = this.fgv.password.value;
-    
+
         await this.serviceAuth.loggin(this.user).subscribe((data: any) => {
+
           this.user.token = data.data.token;
           this.serviceAuth.Autenticar(this.user.email, this.user.token);
-              this.showSuccess();
-        } , error => {
-          modalmenssage("Ha ocurrido un error con sus Credenciales pro favor revize las misma....");
+          this.showSuccess();
+        }, error => {
+         this.showError();
         })
       }
 
     }
 
     catch (e) {
-      modalmenssage("Ha ocurrido un error al tratar de enviar los datos , por favor revise con detenimiento sus Datos");
+      this.showError();
     }
 
   }
@@ -73,8 +71,20 @@ export class LoginComponent implements OnInit {
   }
 
   showSuccess() {
-    this.toastr.success('Bienvendio a MVP', 'Boots MVP' , {
-       timeOut:3000
+    this.toastr.success('Bienvendio a MVP', 'Boots MVP', {
+      timeOut: 1000
+    });
+  }
+  
+  showError() {
+    this.toastr.error('Ha ocurrido un error , revise sus credenciales ', 'Boots MVP', {
+      timeOut: 1000
+    });
+  }
+
+  showError1() {
+    this.toastr.error('Relle los datos del formulario correctamente.... ', 'Boots MVP', {
+      timeOut: 1000
     });
   }
 

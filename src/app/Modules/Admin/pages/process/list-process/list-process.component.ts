@@ -23,13 +23,10 @@ export class ListProcessComponent implements OnInit {
    activa: boolean = true;
 
 
-    
-
+   
    constructor(private service: ProcessServices, private _route: Router, private toast: ToastrService, private modalService: NgbModal) { }
 
-
    ngOnInit() {
-
       this.isActivar = true;
       this.getAllProcess();
    }
@@ -54,16 +51,21 @@ export class ListProcessComponent implements OnInit {
 
    }
 
+
+
   async  Obtener_Provedor(id: string, name: string , longContent ) {
               this.isActivar = true ;
       await this.service.getProvedor_Process(id).subscribe((res: any) => {
-         console.log(res.data);
+         //console.log(res.data);
           this.listProvedor = res.data;
-         });
-         setTimeout(()=>{
-              this.isActivar=false ;
-         }, 1000);
 
+          setTimeout(()=>{
+            this.isActivar=false ;
+       }, 1000);
+
+         });
+
+     
          this.modalService.open(longContent);
          this.listProvedor = [] ;
    }

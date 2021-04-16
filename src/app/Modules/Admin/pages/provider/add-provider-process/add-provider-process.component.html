@@ -30,24 +30,30 @@
                 </select>
             </div>
 
+            <div class="form-group">
+                <label for="exampleFormControlSelect1">Mode Transporte</label>
+                <select class="form-control" id="selectProcess" formControlName="select3">
+                    <option *ngFor="let i of TrasnMode" value="{{i}}">{{i}}</option>
+                </select>
+            </div>
+
             <div class="form-group mb-3 mt-5">
                 <input type="text" class="fadeIn second form-control" formControlName="good"
                     placeholder="Tipo de Suministro">
             </div>
 
             <div class="form-group mb-3 mt-5">
-                <input type="number" class="fadeIn second form-control" formControlName="tons"
-                    placeholder="Toneladas">
+                <input type="number" class="fadeIn second form-control" formControlName="tons" placeholder="Toneladas">
             </div>
-                
+
             <div class="form-group mb-3 mt-5">
-                <input type="number" class="fadeIn second form-control" formControlName="year"
-                    placeholder="año">
+                <input type="number" class="fadeIn second form-control" formControlName="year" placeholder="año">
             </div>
 
 
             <button (click)="enviar()" type="button" class="btn btn-primary my-4 mr-2 fadeIn fourth">Agregar</button>
-            <button [routerLink]="['/admin' , 'process'  ,'listProcess']" type="button" class="btn btn-danger my-4 mr-2 fadeIn fourth">Cancelar</button>
+            <button [routerLink]="['/admin' , 'process'  ,'listProcess']" type="button"
+                class="btn btn-danger my-4 mr-2 fadeIn fourth">Cancelar</button>
         </form>
 
     </div>

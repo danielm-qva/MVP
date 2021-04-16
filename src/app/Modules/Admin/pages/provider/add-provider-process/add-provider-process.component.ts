@@ -19,6 +19,7 @@ export class AddProviderProcessComponent implements OnInit {
   formProc_Provid = new FormGroup({
     select1: new FormControl(''),
     select2: new FormControl(''),
+    select3: new FormControl(''),
     good: new FormControl(''),
     tons: new FormControl(''),
     year: new FormControl('')
@@ -27,6 +28,7 @@ export class AddProviderProcessComponent implements OnInit {
   isActivar: Boolean;
   listaProvedore: Provider[] = [];
   listaProcess: Process[] = [];
+  TrasnMode = ["aereo" ,"ferrocarril" , "automotor" , "cabotaje" , "fluvial" ,"tuberia" , "multimodal" ,"directo" ,"manual", "interno"];
 
 
   constructor(private serviceProvider: ProvedorService,
@@ -50,7 +52,8 @@ export class AddProviderProcessComponent implements OnInit {
         "process_id": this.formProc_Provid.controls.select2.value,
         "goods_type": this.formProc_Provid.controls.good.value,
         "tons_by_supplies": this.formProc_Provid.controls.tons.value,
-        "number_supplies_year": this.formProc_Provid.controls.year.value
+        "number_supplies_year": this.formProc_Provid.controls.year.value,
+        "transportation_mode":this.formProc_Provid.controls.select3.value 
       };
 
     console.log({process_provider});

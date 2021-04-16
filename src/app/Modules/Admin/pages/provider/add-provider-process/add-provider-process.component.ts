@@ -14,6 +14,7 @@ import { FormGroup, FormControl } from '@angular/forms';
   templateUrl: './add-provider-process.component.html',
   styleUrls: ['./add-provider-process.component.css']
 })
+
 export class AddProviderProcessComponent implements OnInit {
 
   formProc_Provid = new FormGroup({
@@ -59,7 +60,7 @@ export class AddProviderProcessComponent implements OnInit {
     console.log({process_provider});
    
     this.servicesPorcess.AddProvider_Process(process_provider).subscribe(  (res: any) => {
-    
+        console.log(res);
         this.showSucce();
         this._router.navigateByUrl('/admin/process/listProcess');
     }, error => {

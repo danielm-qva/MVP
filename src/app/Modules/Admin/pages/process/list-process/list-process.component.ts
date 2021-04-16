@@ -38,7 +38,8 @@ export class ListProcessComponent implements OnInit {
 
 
    getAllProcess() {
-      this.service.getAllProcess().subscribe((res: any) => {
+      this.service.getAllProcess().subscribe( (res: any) => {
+
          this.list = res.data;
          setTimeout(() => {
             this.isActivar = false;
@@ -56,7 +57,7 @@ export class ListProcessComponent implements OnInit {
   async  Obtener_Provedor(id: string, name: string , longContent ) {
               this.isActivar = true ;
       await this.service.getProvedor_Process(id).subscribe((res: any) => {
-         //console.log(res.data);
+      console.log(res);
           this.listProvedor = res.data;
 
           setTimeout(()=>{

@@ -38,5 +38,13 @@ export class ProvedorService {
     deleteProvider(id:string){
             return this._http.delete(this.URL +'admin/providers/'+id , {headers:this.header});
     }
+
+       getProvider_evalution():Observable<Object[]>{
+               return this._http.get<Object[]>(this.URL + 'provider_evaluations' , {headers:this.header});
+       }
+
+       deleteEvaluacion(id:string){
+              return this._http.delete(this.URL + 'provider_evaluations/'+id , {headers: this.header});
+       }
     
 }

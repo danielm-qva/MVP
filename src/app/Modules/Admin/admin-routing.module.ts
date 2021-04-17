@@ -8,14 +8,17 @@ import { AddProcessComponent } from './pages/process/add-process/add-process.com
 import { ListProcessComponent } from './pages/process/list-process/list-process.component';
 import { AddProviderProcessComponent } from './pages/provider/add-provider-process/add-provider-process.component';
 import { ListProvProcessComponent } from './pages/process/list-prov-process/list-prov-process.component';
-
+import { EnvaProvedorComponent } from './pages/provider/enva-provedor/enva-provedor.component';
+import { ListEvaluatProveComponent } from './pages/provider/list-evaluat-prove/list-evaluat-prove.component';
 
 const routes: Routes = [
 
   {
     path: 'provider', children: [
       { path: 'addProvider', component: AddProviderComponent },
-      { path: 'listProvider', component: ListProviderComponent }
+      { path: 'listProvider', component: ListProviderComponent },
+      {path:'evaProvider' , component:EnvaProvedorComponent} ,
+       {path:'list_provi_evalua' , component:ListEvaluatProveComponent}
     ]
   },
   {

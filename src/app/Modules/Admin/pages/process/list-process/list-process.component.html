@@ -1,15 +1,17 @@
-
-
-
-<div style="display: inline-block;">
+<div style="display: ;">
 
   <button *ngIf="isAcitve()" [routerLink]="['/admin', 'process' , 'addProcess']" class="btn "><a
-    class="fa fa-plus"></a></button>
-    
-    <button [routerLink]= "['/admin' , 'proces_provider']" class="btn btn-primary">
-           Agregar Provedor 
-    </button>
-   </div>
+      class="fa fa-plus"></a></button>
+
+  <button [routerLink]="['/admin' , 'proces_provider']" class="btn btn-primary">
+    Agregar Provedor
+  </button>
+
+  <button  [routerLink]="['/admin' , 'provider' , 'evaProvider']" class="btn btn-primary margin-btn">
+    Evaluacion Provedor
+  </button>
+
+</div>
 
 <table class="table mt-2">
 
@@ -20,18 +22,18 @@
         <span aria-hidden="true">&times;</span>
       </button>
     </div>
-    <div class="modal-body" >
-            <div *ngFor="let item of listProvedor" >
-                <h2>{{item.provider_name}}</h2>
-              <ul>
-                <li>Localizacion : {{item.location}}</li>
-                <li>Distancia : {{item.distance_km}} KM</li>
-                <li>Tipo Bienes : {{item.goods_type}} </li>
-                <li>Suministro al año : {{item.number_supplies_year}} </li>
-                <li>Suministro(Toneladas) : {{item.tons_by_supplies}} </li>
-                <li>Modo Transporte: {{item.transportation_mode}}</li>
-              </ul>
-            </div>
+    <div class="modal-body">
+      <div *ngFor="let item of listProvedor">
+        <h2>{{item.data.name}}</h2>
+        <ul>
+          <li>Localizacion : {{item.data.location}}</li>
+          <li>Distancia : {{item.data.distance_km}} KM</li>
+          <li>Tipo Bienes : {{item.good}} </li>
+          <li>Suministro al año : {{item.sumi}} </li>
+          <li>Suministro(Toneladas) : {{item.tonelada}} </li>
+          <li>Modo Transporte: {{item.modeTran}}</li>
+        </ul>
+      </div>
     </div>
     <div class="modal-footer">
       <button type="button" class="btn btn-light" (click)="modal.close('Close click')">Close</button>
@@ -39,7 +41,7 @@
   </ng-template>
 
 
-  
+
 
   <thead class="thead-light">
     <tr>
@@ -62,7 +64,7 @@
         <button (click)="delete_id(item.id)" class="btn btn-danger  mr-1 ml-1">
           <i class="fa fa-trash"></i>
         </button>
-        <button (click)="Obtener_Provedor(item.id , item.name , longContent)"  class="btn btn-info  mr-1 ml-1">
+        <button (click)="Obtener_Provedor(item.id , item.name , longContent)" class="btn btn-info  mr-1 ml-1">
           <i class="fa fa-briefcase"></i>
         </button>
       </td>
@@ -71,10 +73,6 @@
   </tbody>
 </table>
 
-<ngx-loading-x  [show]="isActivar"> </ngx-loading-x>
+<ngx-loading-x [show]="isActivar"> </ngx-loading-x>
 
 <pagination-controls (pageChange)="pages = $event"></pagination-controls>
-
-
-
-

@@ -14,13 +14,15 @@ import {ReactiveFormsModule , FormsModule} from '@angular/forms' ;
 
 import { NgxLoadingXModule } from 'ngx-loading-x';
 import { AddProviderProcessComponent } from './pages/provider/add-provider-process/add-provider-process.component';
-import { ListProvProcessComponent } from './pages/process/list-prov-process/list-prov-process.component'
+import { ListProvProcessComponent } from './pages/process/list-prov-process/list-prov-process.component';
+import { EnvaProvedorComponent } from './pages/provider/enva-provedor/enva-provedor.component';
+import { ListEvaluatProveComponent } from './pages/provider/list-evaluat-prove/list-evaluat-prove.component'
  
 
 
 
 @NgModule({
-  declarations: [ListProviderComponent, AddProviderComponent, ListProcessComponent, AddProcessComponent, AddProviderProcessComponent, ListProvProcessComponent],
+  declarations: [ListProviderComponent, AddProviderComponent, ListProcessComponent, AddProcessComponent, AddProviderProcessComponent, ListProvProcessComponent, EnvaProvedorComponent, ListEvaluatProveComponent],
   imports: [
     CommonModule,
     AdminRoutingModule,

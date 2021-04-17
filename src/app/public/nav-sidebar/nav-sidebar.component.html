@@ -44,11 +44,26 @@
               <span>Procesos</span>
             </a>
           </li>
-          <li>
-            <a routerLink="admin/provider/listProvider">
-              <i class="fa fa-calendar"></i>
+         
+          <li class="sidebar-dropdown">
+            <a >
+              <i class="fa  fa-calendar"></i>
               <span>Proveedores</span>
+              <span class="badge badge-pill badge-warning"></span>
             </a>
+            <div class="sidebar-submenu">
+              <ul>
+                <li>
+                  <a [routerLink]="[ 'admin' , 'provider', 'listProvider']">Lista Provedores 
+                   
+                  </a>
+                </li>
+                <li>
+                  <a [routerLink]="[ 'admin' , 'provider', 'list_provi_evalua']">Lista Evalucaiones </a>
+                </li>
+            
+              </ul>
+            </div>
           </li>
           
           <li class="sidebar-dropdown">

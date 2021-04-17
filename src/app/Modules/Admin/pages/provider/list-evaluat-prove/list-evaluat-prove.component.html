@@ -1,0 +1,25 @@
+
+
+<table class="table mt-2">
+    <thead class="thead-light">
+      <tr>
+        <th scope="col">Nombre</th>
+        <th scope="col">Puntuacion</th>
+        <th scope="col">Accion</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr *ngFor="let i of listaEval"  > 
+        <th scope="row">Acinox</th>
+        <td>{{i.final_evaluation}}</td>
+        <td>
+          <button (click)="delete(i.id)" class="btn btn-danger btn-md mr-1 ml-1">
+            <i class="fa fa-trash"></i>
+          </button>
+        </td>
+      </tr>
+
+    </tbody>
+  </table>
+
+  <ngx-loading-x  > </ngx-loading-x>

@@ -39,6 +39,10 @@ export class ProcessServices {
     AddProvider_Process(a: Object) {
         return this._http.post(this.URL + 'processes/add_provider', { "process_provider": a }, { headers: this.header });
     }
+      
+     AddEvalution_Provider(a:Object){
+          return this._http.post(this.URL + 'provider_evaluations' , {"provider_evaluation": a} , {headers : this.header});
+     } 
 
     getProvedor_Process(id:string):Observable<Provider[]>{
         return this._http.get<Provider[]>(this.URL+'processes/'+id+'/providers' , {headers:this.header});

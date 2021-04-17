@@ -16,7 +16,7 @@ declare const ModalProvider_Process: any;
 export class ListProcessComponent implements OnInit {
 
    isActivar: boolean;
-   listProvedor: any = [];
+   listProvedor: Object[] = [];
    pages: number = 1;
    list: Process[] = [];
    process: Process = new Process;
@@ -39,8 +39,8 @@ export class ListProcessComponent implements OnInit {
 
    getAllProcess() {
       this.service.getAllProcess().subscribe( (res: any) => {
-
          this.list = res.data;
+
          setTimeout(() => {
             this.isActivar = false;
          }, 800);
@@ -55,10 +55,21 @@ export class ListProcessComponent implements OnInit {
 
 
   async  Obtener_Provedor(id: string, name: string , longContent ) {
-              this.isActivar = true ;
+         this.isActivar = true ;
+         console.log(name);
+          
       await this.service.getProvedor_Process(id).subscribe((res: any) => {
-      console.log(res);
-          this.listProvedor = res.data;
+             console.log(res.data);
+              res.data.map( data => { 
+                  console.log(data.process.name);
+                      if(data.process.name == name){
+                          this.listProvedor.push({"data" : data.provider , "good": data.goods_type , "sumi": data.number_supplies_year , 
+                             "tonelada" : data.tons_by_supplies , "modeTran": data.transportation_mode });
+                      }
+                     
+              })
+                
+          console.log(this.listProvedor);
 
           setTimeout(()=>{
             this.isActivar=false ;

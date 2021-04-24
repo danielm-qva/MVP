@@ -160,7 +160,10 @@
                         <input type="number" class="fadeIn second form-control" formControlName="credit" placeholder="Credito">
                        </div>
                        <div class="col-6">
-                        <input type="number" class="fadeIn second form-control" formControlName="creditP" placeholder="Ponderacion">
+                        <select class="form-control" formControlName="creditP">
+                            <option  *ngFor="let item of Valors; let i=index" value="{{i+1}}">
+                                {{item}}</option>
+                        </select>
                        </div>
                  </div>
             
@@ -173,7 +176,11 @@
                         <input type="number" class="fadeIn second form-control" formControlName="punt" placeholder="Puntualidad">
                        </div>
                        <div class="col-6">
-                        <input type="number" class="fadeIn second form-control" formControlName="puntP" placeholder="Ponderacion">
+                        <select class="form-control" formControlName="puntP">
+                            <option  *ngFor="let item of Valors; let i=index" value="{{i+1}}">
+                                {{item}}</option>
+                        </select>
+                     
                        </div>
                  </div>
             
@@ -187,7 +194,11 @@
                         <input type="number" class="fadeIn second form-control" formControlName="cali" placeholder="Calidad">
                        </div>
                        <div class="col-6">
-                        <input type="number" class="fadeIn second form-control" formControlName="caliP" placeholder="Ponderacion">
+                        <select class="form-control" formControlName="caliP">
+                            <option  *ngFor="let item of Valors; let i=index" value="{{i+1}}">
+                                {{item}}</option>
+                        </select>
+                    
                        </div>
                  </div>
             
@@ -200,7 +211,11 @@
                         <input type="number" class="fadeIn second form-control" formControlName="reli" placeholder="Relaciones">
                        </div>
                        <div class="col-6">
-                        <input type="number" class="fadeIn second form-control" formControlName="reliP" placeholder="Ponderacion">
+                        <select class="form-control" formControlName="reliP">
+                            <option  *ngFor="let item of Valors; let i=index" value="{{i+1}}">
+                                {{item}}</option>
+                        </select>
+                        
                        </div>
                  </div>
             
@@ -213,7 +228,11 @@
                         <input type="number" class="fadeIn second form-control" formControlName="canti" placeholder="Credito">
                        </div>
                        <div class="col-6">
-                        <input type="number" class="fadeIn second form-control" formControlName="cantiP" placeholder="Ponderacion">
+                        <select class="form-control" formControlName="cantiP">
+                            <option  *ngFor="let item of Valors; let i=index" value="{{i+1}}">
+                                {{item}}</option>
+                        </select>
+                    
                        </div>
                  </div>
             
@@ -221,7 +240,7 @@
          
          
 
-                <button (click)="enviar()" type="button" class="btn btn-primary my-4 mr-2 fadeIn fourth">Agregar</button>
+                <button (click)="enviar()" type="button" class="btn btn-primary my-4 mr-2 fadeIn fourth" >Agregar</button>
                 <button [routerLink]="['/admin' , 'process'  ,'listProcess']" type="button"
                 class="btn btn-danger my-4 mr-2 fadeIn fourth">Cancelar</button>
             </form>

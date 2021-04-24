@@ -39,6 +39,8 @@ export class EnvaProvedorComponent implements OnInit {
   listaProcess = [];
   listaPrevider:Object[] = [];
 
+    Valors:String[] = ['Mal', 'Regular' , 'Bien' , 'Muy Bien', 'Excelente'];
+
   constructor(private _serivec: ProcessServices, private _serviceP: ProvedorService, private toast: ToastrService) { }
 
   ngOnInit(): void {
@@ -57,6 +59,7 @@ export class EnvaProvedorComponent implements OnInit {
   }
 
 
+
   onChange(centroId) {
     this.isActivar = true;
       
@@ -71,6 +74,10 @@ export class EnvaProvedorComponent implements OnInit {
       setTimeout(() => {
         this.isActivar = false;
       }, 800);
+    } , error => {
+        setTimeout(()=> {
+           this.isActivar = false; 
+        } , 800);
     })
 
    // console.log(this.listaPrevider);
@@ -88,6 +95,7 @@ export class EnvaProvedorComponent implements OnInit {
 
 
   enviar() {
+        console.log(this.fromEva.valid);      
 
     const provider_evaluation = {
       "credit": this.fromEva.controls.credit.value,

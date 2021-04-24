@@ -5,6 +5,7 @@ import { User } from '../../../../Models/User';
 
 import { ToastrService } from 'ngx-toastr';
 
+
 @Component({
   selector: 'app-login',
   templateUrl: './login.component.html',
@@ -16,6 +17,8 @@ export class LoginComponent implements OnInit {
 
   user: User = new User();
   fgValidator: FormGroup;
+
+  isActivar: boolean ;
 
   constructor(private fb: FormBuilder, private serviceAuth: AuthService, private toastr: ToastrService) {
 
@@ -38,21 +41,32 @@ export class LoginComponent implements OnInit {
 
   async beginSession() {
 
+         this.isActivar = true ;
     try {
       if (this.fgValidator.invalid) {
        this.showError1();
+          
       }
 
       else {
         this.user.email = this.fgv.email.value;
         this.user.pass = this.fgv.password.value;
 
-        await this.serviceAuth.loggin(this.user).subscribe((data: any) => {
+         this.serviceAuth.loggin(this.user).subscribe((data: any) => {
 
           this.user.token = data.data.token;
           this.serviceAuth.Autenticar(this.user.email, this.user.token);
-          this.showSuccess();
+            setTimeout(() => {
+               this.isActivar = false ;
+            }, 800);
+          this.showSuccess(); 
+              
         }, error => {
+         
+          setTimeout(() => {
+            this.isActivar = false ;
+         }, 800);
+
          this.showError();
         })
       }

@@ -6,7 +6,7 @@ import { LoginComponent } from './pages/login/login.component';
 import { RegisterComponent } from './pages/register/register.component';
 
 import {ReactiveFormsModule , FormsModule } from '@angular/forms' ;
-
+import { NgxLoadingXModule } from 'ngx-loading-x';
 
 
 @NgModule({
@@ -16,6 +16,7 @@ import {ReactiveFormsModule , FormsModule } from '@angular/forms' ;
     AuhtRoutingModule,
     ReactiveFormsModule ,
     FormsModule,
+    NgxLoadingXModule
 
   ]
 })

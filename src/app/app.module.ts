@@ -23,8 +23,6 @@ import { HomComponent } from './public/hom/hom.component';
 
 //redux 
 import { StoreModule } from '@ngrx/store';
-
-
 import { ToastrModule } from 'ngx-toastr';
 
 import { ModalReducer } from './Redux/Modal/modal.reducer';
@@ -55,4 +53,5 @@ import { NgbModule } from '@ng-bootstrap/ng-bootstrap';
   providers: [AuthService, ProductService, ProvedorService],
   bootstrap: [AppComponent]
 })
+
 export class AppModule { }

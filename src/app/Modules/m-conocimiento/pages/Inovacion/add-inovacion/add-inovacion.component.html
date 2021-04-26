@@ -1,0 +1,75 @@
+<div class="wrapper fadeInDown">
+  <div id="formContent">
+    <!-- Tabs Titles -->
+
+    <form role="form" [formGroup]="froms">
+
+      <div class="form-group mb-3 mt-5">
+        <div class="text-muted text-center mt-3">
+          <h4>Crear Inovacion</h4>
+        </div>
+      </div>
+
+      <div class="form-group mb-3 mt-5">
+        <input type="text" class="fadeIn second form-control" formControlName="name" placeholder="Nombre">
+        <div class="invalid" *ngIf="froms.controls.name.errors">
+          <strong *ngIf="froms.controls.name.errors.required">This field is required</strong>
+        </div>
+      </div>
+
+      <div class="form-group mb-3 mt-5">
+        <input type="text" class="fadeIn second form-control" formControlName="objective" placeholder="Objetivo">
+        <div class="invalid" *ngIf="froms.controls.objective.errors">
+          <strong *ngIf="froms.controls.objective.errors.required">This field is required</strong>
+        </div>
+
+      </div>
+
+      <div class="form-group mb-3 mt-5">
+        <input type="text" class="fadeIn second form-control" formControlName="expected_result"
+          placeholder="Resultado Esperado">
+        <div class="invalid" *ngIf="froms.controls.expected_result.errors">
+          <strong *ngIf="froms.controls.expected_result.errors.required">This field is required</strong>
+        </div>
+
+      </div>
+
+      <div class="form-group mb-3 mt-5">
+        <input type="number" class="fadeIn second form-control" formControlName="budget"
+          placeholder="Presupuesto Total">
+        <div class="invalid" *ngIf="froms.controls.budget.errors">
+          <strong *ngIf="froms.controls.budget.errors.required">This field is required</strong>
+        </div>
+      </div>
+
+      <div class="form-group mb-3 mt-5">
+        <input type="number" class="fadeIn second form-control" formControlName="term" placeholder="Plazo">
+        <div class="invalid" *ngIf="froms.controls.term.errors">
+          <strong *ngIf="froms.controls.term.errors.required">This field is required</strong>
+        </div>
+      </div>
+
+      <div class="form-group mb-3 mt-5">
+        <input type="number" class="fadeIn second form-control" formControlName="expected_annual_effect"
+          placeholder="Efecto Anual Esperado">
+          <div class="invalid" *ngIf="froms.controls.expected_annual_effect.errors">
+            <strong *ngIf="froms.controls.expected_annual_effect.errors.required">This field is required</strong>
+          </div>
+      </div>
+
+      <div class="form-group mb-3 mt-5">
+        <textarea class="fadeIn second form-control" formControlName="observation" placeholder="Observacion">
+             </textarea>
+      </div>
+
+
+      <button (click)="Enviar()" type="button" class="btn btn-primary my-4 mr-2 fadeIn fourth">Agregar</button>
+      <button [routerLink]="['/mconocimiento','listinovacion']" type="button"
+        class="btn btn-danger my-4 fadeIn fourth" [routerLink]="['/mconocimiento','listinovacion']">Cancelar</button>
+
+
+    </form>
+
+
+  </div>
+</div>

@@ -1,0 +1,58 @@
+<table class="table mt-2">
+  <thead class="thead-light">
+    <tr>
+      <th scope="col">Nombre</th>
+      <th scope="col">Objetivo</th>
+      <th scope="col">Resultado Esperado</th>
+      <th scope="col">Presupuesto</th>
+      <th scope="col">Plazo(año)</th>
+      <th scope="col">Efecto Anual Espeado</th>
+      <th scope="col">Acciones</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr *ngFor="let i of list; ">
+      <th scope="row">{{i.name}}</th>
+      <td>{{i.objective}}</td>
+      <td>{{i.expected_result}}</td>
+      <td>{{i.budget.amount}}</td>
+      <td>{{i.term}}</td>
+      <td>{{i.expected_annual_effect.amount}}</td>
+      <td>
+        <button (click)="deleteinovacion(i.id)" class="btn btn-danger btn-md mr-1 ml-1">
+          <i class="fa fa-trash"></i>
+        </button>
+        <button class="btn btn-success btn-xs mr-1 ml-1" [routerLink]="['/mconocimiento', 'addinovacion' ]">
+          <i class="fa fa-plus"></i>
+        </button>
+        <button (click)="UpdateInvacion(i.id)" class="btn btn-info btn-xs mr-1 ml-1"
+          [routerLink]="['/mconocimiento/updateinovacion', i.id] ">
+          <i class="fa fa-history"></i>
+        </button>
+
+
+      </td>
+    </tr>
+
+  </tbody>
+</table>
+
+
+<div class="container">
+  <div class="row">
+
+    <table class="table">
+      <thead class="thead-light">
+        <tr>
+          <th scope="col">Total</th>
+          <th scope="col">First</th>
+          <th scope="col">Last</th>
+          <th scope="col">Last</th>
+
+        </tr>
+      </thead>
+    </table>
+  </div>
+</div>
+
+<ngx-loading-x [show]="isActiva"> </ngx-loading-x>

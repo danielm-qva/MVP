@@ -1,0 +1,35 @@
+
+### Login para la app
+POST https://mvp-api-jc.herokuapp.com/api/users/login
+Content-Type: application/json
+
+{
+    "email": "daniel@gmail.com" ,
+     "password": "123qweasdzxc"
+}
+
+###
+https://mvp-api-jc.herokuapp.com/api/admin/tangible_fixed_assets
+Content-Type: application/json
+Authorization: Bearer eyJhbGciOiJIUzUxMiIsInR5cCI6IkpXVCJ9.eyJhdWQiOiJtdnBfYXBpIiwiZXhwIjoxNjI2MjE2MzM1LCJpYXQiOjE2MjU5NTcxMzUsImlzcyI6Im12cF9hcGkiLCJqdGkiOiI3OGRmYzFjMC1hMmQxLTQwNjMtYTkzNS03ZmMyMDI1Zjk3NmIiLCJuYmYiOjE2MjU5NTcxMzQsInN1YiI6IjJhM2I2NDBiLTlkMTItNDJlOS04N2JjLTNmZTI0YjdhNGU3OSIsInR5cCI6ImFjY2VzcyJ9.j96BJuGXZFUyMRF2iB_rbxc_ogN5HDmNa0lc1JuSVbrQoTE9X0oFm56FT84VkmjXPeSqaEb7OuUertdWZOR-5w
+
+
+###
+POST https://mvp-api-jc.herokuapp.com/api/admin/tangible_fixed_assets
+Content-Type: application/json
+Authorization: Bearer eyJhbGciOiJIUzUxMiIsInR5cCI6IkpXVCJ9.eyJhdWQiOiJtdnBfYXBpIiwiZXhwIjoxNjI2MjgxNzU2LCJpYXQiOjE2MjYwMjI1NTYsImlzcyI6Im12cF9hcGkiLCJqdGkiOiI0ZGVjNTJiMC01ZWJlLTRiM2MtOWI0NC0wOTQwNWM1YTA5YjYiLCJuYmYiOjE2MjYwMjI1NTUsInN1YiI6IjJhM2I2NDBiLTlkMTItNDJlOS04N2JjLTNmZTI0YjdhNGU3OSIsInR5cCI6ImFjY2VzcyJ9.swkx8xcn2Qmp8620ZWYWs5X3nAec2HFtk151fa-Fc4HRkIbg03ggISGUne9bW_f_JOzqu4ccIDLxVQMU3JDeHg
+
+{
+     "tangible_fixed_asset": {
+                  "classification" : "1",
+                  "dedicated_percentage" :"1",
+                  "depreciation_rate" : "1",
+                  "description": "1",
+                  "inventory_number" : "1",
+                  "purchase_price": {
+                     "amount" : "1",
+                     "currency" : "CUP"
+                  },
+                  "quantity" : "1"
+            }
+}

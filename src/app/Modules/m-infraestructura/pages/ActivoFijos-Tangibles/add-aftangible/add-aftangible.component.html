@@ -1,0 +1,72 @@
+<ngx-loading-x [show]="isloading"> </ngx-loading-x>
+<div class="wrapper fadeInDown">
+    <div id="formContent">
+          <form   (ngSubmit)="onSubmit()" role="form" [formGroup]="FromAFT">
+            <div class="form-group mb-3 mt-5">
+                <div class="text-muted text-center mt-3">
+                  <h4>Crear Activo Fijo Tangible</h4>
+                </div>
+              </div>
+
+              <div class="form-group mb-3 mt-5">
+                <input type="text" class="fadeIn second form-control" formControlName="clasificacion" placeholder="Clasificacion">
+                <div class="invalid" *ngIf="FromAFT.controls.clasificacion.errors">
+                  <strong *ngIf="FromAFT.controls.clasificacion.errors.required">Rellen el campo por favor...</strong>
+                </div>
+              </div>
+
+              <div class="form-group mb-3 mt-5">
+                <input type="number" class="fadeIn second form-control"  formControlName="porcentageDedicado" placeholder="Porcentage Dedicado">
+                <div class="invalid" *ngIf="FromAFT.controls.porcentageDedicado.errors">
+                  <strong *ngIf="FromAFT.controls.porcentageDedicado.errors.required">Rellen el campo por favor...</strong>
+                  <strong *ngIf="FromAFT.controls.porcentageDedicado.errors.max">Valor Maximo 100...</strong>
+                </div>
+              </div>
+
+
+              <div class="form-group mb-3 mt-5">
+                <input type="number" class="fadeIn second form-control" formControlName="despreciation" placeholder="Despreciacion">
+                <div class="invalid" *ngIf="FromAFT.controls.despreciation.errors">
+                  <strong *ngIf="FromAFT.controls.despreciation.errors.required">Rellen el campo por favor...</strong>
+                </div>
+              </div>
+            
+
+         
+              <div class="form-group mb-3 mt-5">
+                <input type="text" class="fadeIn second form-control" formControlName="description" placeholder="Descripcion">
+                <div class="invalid" *ngIf="FromAFT.controls.description.errors">
+                  <strong *ngIf="FromAFT.controls.description.errors.required">Rellen el campo por favor...</strong>
+                </div>
+              </div>
+              
+
+              <div class="form-group mb-3 mt-5">
+                <input type="number" class="fadeIn second form-control" formControlName="numeroInventario" placeholder="No.Inventario">
+                <div class="invalid" *ngIf="FromAFT.controls.numeroInventario.errors">
+                  <strong *ngIf="FromAFT.controls.numeroInventario.errors.required">Rellen el campo por favor...</strong>
+                </div>
+              </div>
+
+              <div class="form-group mb-3 mt-5">
+                <input type="number" class="fadeIn second form-control" formControlName="precio" placeholder="Precio">
+              <div class="invalid" *ngIf="FromAFT.controls.precio.errors">
+                  <strong *ngIf="FromAFT.controls.precio.errors.required">Rellen el campo por favor...</strong>
+                </div>
+              </div>
+
+
+              <div class="form-group mb-3 mt-5">
+                <input type="number" class="fadeIn second form-control" formControlName="cantidad" placeholder="Cantidad">
+                <div class="invalid" *ngIf="FromAFT.controls.cantidad.errors">
+                  <strong *ngIf="FromAFT.controls.cantidad.errors.required">Rellen el campo por favor...</strong>
+                </div>
+              </div>
+
+              <button type="submit" class="btn btn-primary my-4 mr-2 fadeIn fourth" [disabled] = '!this.FromAFT.valid'>Agregar</button>
+              <button [routerLink]="['/infraes','listAFtangible']" type="button"
+                class="btn btn-danger my-4 fadeIn fourth" >Cancelar</button>
+      
+          </form>
+    </div>
+</div>

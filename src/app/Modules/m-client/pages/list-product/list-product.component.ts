@@ -3,9 +3,6 @@ import { ProductService } from '../../../../Services/ProductServices';
 import { Router } from '@angular/router';
 import { product } from '../../../../Models/products';
 
-
-
-
 declare const modalmenssage: any;
 
 
@@ -37,7 +34,7 @@ export class ListProductComponent implements OnInit {
       }, 800);
 
     }, error => {
-      modalmenssage("Ha ocurrido un error al recuperar los datos , verifique su connections ");
+      modalmenssage("Ha ocurrido un error al recuperar los datos , verifique su coneccion ");
       this._route.navigateByUrl('/home');
     });
   }

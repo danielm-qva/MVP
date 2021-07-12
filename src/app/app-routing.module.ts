@@ -13,6 +13,7 @@ const routes: Routes = [
    {path: 'products' ,canActivate:[AuhtCantActive] ,  loadChildren: () => import('./Modules/m-client/m-client.module').then(m => m.MClientModule)},
   {path:'home'  ,component:HomComponent},
    {path:'' , component:HomComponent},
+  { path: 'infraes', loadChildren: () => import('./Modules/m-infraestructura/m-infraestructura.module').then(m => m.MInfraestructuraModule) },
     {path:"**" , canActivate:[AuhtCantActive] , component:HomComponent}
 
 ];

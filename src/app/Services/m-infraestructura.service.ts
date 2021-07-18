@@ -1,7 +1,7 @@
 import { Injectable } from '@angular/core';
 import { environment } from 'src/environments/environment';
 import { HttpClient } from '@angular/common/http';
-import { Observable } from 'rxjs';
+import { Observable, ObservableLike } from 'rxjs';
   
 
 @Injectable({
@@ -37,6 +37,19 @@ export class MInfraestructuraService {
        return this.http.delete(this.URL + 'admin/tangible_fixed_assets/'+ id , {headers : this.header});
      }
 
+
+     //Utiles y herramientas 
+
+     getAllUH():Observable<Object[]> {
+        return this.http.get<Object[]>(this.URL + 'infrastructure/utils_tools' , {headers : this.header}) ;
+     }
+     AddUtilsTools(data: Object){
+        return this.http.post(this.URL + 'infrastructure/utils_tools', data  , {headers : this.header});
+     }
+
+     DeleteUtilsTools(id:string){
+      return this.http.delete(this.URL + 'infrastructure/utils_tools/'+ id , {headers : this.header});
+    }
 
 
 }

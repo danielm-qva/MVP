@@ -1,0 +1,101 @@
+<ngx-loading-x [show]="isloading"> </ngx-loading-x>
+<div class="wrapper fadeInDown">
+    <div id="formContent">
+          <form   (ngSubmit)="onSubmit()" role="form" [formGroup]="formetrologia">
+            <div class="form-group mb-3 mt-5">
+                <div class="text-muted text-center mt-3">
+                  <h4>Crear Utiles y Herramientas</h4>
+                </div>
+              </div>
+
+              <div class="form-group mb-3 mt-5">
+                <input type="text" class="fadeIn second form-control" formControlName="puntoControl" placeholder="Punto Control">
+                <div class="invalid" *ngIf="formetrologia.controls.puntoControl.errors">
+                  <strong *ngIf="formetrologia.controls.puntoControl.errors.required">Rellen el campo por favor...</strong>
+                </div>
+              </div>
+
+              <div class="form-group mb-3 mt-5">
+                <input type="text" class="fadeIn second form-control"  formControlName="Vcontrolada" placeholder="Variable Controlada">
+                <div class="invalid" *ngIf="formetrologia.controls.Vcontrolada.errors">
+                  <strong *ngIf="formetrologia.controls.Vcontrolada.errors.required">Rellen el campo por favor...</strong>
+                 
+                </div>
+              </div>
+
+
+              <div class="form-group mb-3 mt-5">
+                <input type="text" class="fadeIn second form-control" formControlName="instrumento" placeholder="Instrumento">
+                <div class="invalid" *ngIf="formetrologia.controls.instrumento.errors">
+                  <strong *ngIf="formetrologia.controls.instrumento.errors.required">Rellen el campo por favor...</strong>
+                </div>
+              </div>
+              
+              <div class="form-group mb-3 mt-5">
+                <input type="number" class="fadeIn second form-control" formControlName="precision" placeholder="Precision">
+                <div class="invalid" *ngIf="formetrologia.controls.precision.errors">
+                  <strong *ngIf="formetrologia.controls.precision.errors.required">Rellen el campo por favor...</strong>
+                </div>
+              </div>
+
+              <div class="form-group mb-3 mt-5">
+                <input type="number" class="fadeIn second form-control" formControlName="cantidad" placeholder="Cantidad">
+                <div class="invalid" *ngIf="formetrologia.controls.cantidad.errors">
+                  <strong *ngIf="formetrologia.controls.cantidad.errors.required">Rellen el campo por favor...</strong>
+                </div>
+              </div>
+            
+              <div class="form-group mb-3 mt-5">
+                <input type="number" class="fadeIn second form-control" formControlName="Eproceso" placeholder="(%) Empleo Proceso">
+                <div class="invalid" *ngIf="formetrologia.controls.Eproceso.errors">
+                  <strong *ngIf="formetrologia.controls.Eproceso.errors.required">Rellen el campo por favor...</strong>
+                </div>
+              </div>
+
+              <div class="form-group mb-3 mt-5">
+                <input type="number" class="fadeIn second form-control" formControlName="precio" placeholder="Precio">
+                <div class="invalid" *ngIf="formetrologia.controls.precio.errors">
+                  <strong *ngIf="formetrologia.controls.precio.errors.required">Rellen el campo por favor...</strong>
+                </div>
+              </div>
+
+              <div class="form-group mb-3 mt-5">
+                <input type="number" class="fadeIn second form-control" formControlName="VidaUtil" placeholder="Vida Util">
+                <div class="invalid" *ngIf="formetrologia.controls.VidaUtil.errors">
+                  <strong *ngIf="formetrologia.controls.VidaUtil.errors.required">Rellen el campo por favor...</strong>
+                </div>
+              </div>
+
+              <div class="form-group mb-3 mt-5">
+                <input type="number" class="fadeIn second form-control" formControlName="Frecuencia" placeholder="Frecuencia  Verificacion">
+                <div class="invalid" *ngIf="formetrologia.controls.Frecuencia.errors">
+                  <strong *ngIf="formetrologia.controls.Frecuencia.errors.required">Rellen el campo por favor...</strong>
+                </div>
+              </div>
+            
+            
+              <div class="form-group mb-3 mt-5">
+                <input type="number" class="fadeIn second form-control" formControlName="PrecionVerificacion" placeholder="Precio Verificacion">
+                <div class="invalid" *ngIf="formetrologia.controls.PrecionVerificacion.errors">
+                  <strong *ngIf="formetrologia.controls.PrecionVerificacion.errors.required">Rellen el campo por favor...</strong>
+                </div>
+              </div>
+            
+            
+
+              <div class="form-group mb-3 mt-5">
+                <input type="text" class="fadeIn second form-control" formControlName="Ejecutor" placeholder="Ejecutor Verificacion">
+                <div class="invalid" *ngIf="formetrologia.controls.Ejecutor.errors">
+                  <strong *ngIf="formetrologia.controls.Ejecutor.errors.required">Rellen el campo por favor...</strong>
+                </div>
+              </div>
+                  
+
+              <button type="submit" class="btn btn-primary my-4 mr-2 fadeIn fourth" [disabled] = '!this.formetrologia.valid'>Agregar</button>
+              <button [routerLink]="['/infraes','listametrologia']" type="button"
+                class="btn btn-danger my-4 fadeIn fourth" >Cancelar</button>
+      
+          </form>
+    </div>
+</div>
+

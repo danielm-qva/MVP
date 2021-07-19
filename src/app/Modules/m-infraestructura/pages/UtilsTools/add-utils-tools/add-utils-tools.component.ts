@@ -54,6 +54,7 @@ export class AddUtilsToolsComponent implements OnInit {
         this.route.navigate(['/infraes/listUtilstools']);
        }, error=> {
         this.toast.error("No se ha podido completar la operacion.." , 'Boot MVP');
+        this.route.navigate(['/infraes/listUtilstools']);
         setTimeout(()=> {
           this.isloading =false;
       } , 500);

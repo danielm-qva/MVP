@@ -15,7 +15,7 @@
         <th scope="col">(%)Dedicacion Provceso</th>
         <th scope="col">(%) Desgaste Anual</th>
         <th scope="col">Costo Anual</th>
-        <th scope="col">Acciones</th>
+        <th class="col-2" scope="col">Acciones</th>
       </tr>
     </thead>
     <tbody>
@@ -29,10 +29,10 @@
         <td>{{i.annual_wear_percentage}}</td>
         <td>{{i.annual_cost.amount}}</td>
         <td>
-          <button (click)="deleteUtilesTools(i.id)" class="btn btn-danger btn-md mr-1 ml-1">
+          <button (click)="deleteUtilesTools(i.id)" class="btn btn-danger btn-sm mr-1 ml-1">
             <i class="fa fa-trash"></i>
           </button>
-          <button (click)="UpdateInvacion(i.id)" class="btn btn-info btn-xs mr-1 ml-1"
+          <button (click)="UpdateInvacion(i.id)" class="btn btn-info btn-sm mr-1 ml-1"
             [routerLink]="['/mconocimiento/updateinovacion', i.id] ">
             <i class="fa fa-history"></i>
           </button>

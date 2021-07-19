@@ -1,6 +1,6 @@
 import { Injectable } from '@angular/core';
 import { environment } from 'src/environments/environment';
-import { HttpClient } from '@angular/common/http';
+import { HttpClient, HttpHandler } from '@angular/common/http';
 import { Observable, ObservableLike } from 'rxjs';
   
 
@@ -18,21 +18,19 @@ export class MInfraestructuraService {
     "authorization": 'Bearer ' + localStorage.getItem('token'),
     "Content-Type": "application/json",
 }
-
-
  
    //Activo Fijo Tangible
   
-    //Get All
+   
     getAll():Observable<Object[]>{
     return this.http.get<Object[]>(this.URL + 'admin/tangible_fixed_assets' , {headers : this.header});
     }
-    //Post
+  
     AddAFtangible(data:Object){
     
        return this.http.post(this.URL + 'admin/tangible_fixed_assets' , data, {headers : this.header});
     } 
-     //delete
+   
      DeleteAFtangible(id:string){
        return this.http.delete(this.URL + 'admin/tangible_fixed_assets/'+ id , {headers : this.header});
      }
@@ -49,6 +47,29 @@ export class MInfraestructuraService {
 
      DeleteUtilsTools(id:string){
       return this.http.delete(this.URL + 'infrastructure/utils_tools/'+ id , {headers : this.header});
+    }
+
+    //Metrologia 
+
+    getAllMetrologia():Observable<Object[]>{
+      return this.http.get<Object[]>(this.URL + 'infrastructure/metrology/control_points' , {headers: this.header});
+    }
+    addMetrologia(data:Object){
+       return this.http.post(this.URL + 'infrastructure/metrology/control_points' , data , {headers : this.header});
+    }
+    DeleteMetrologia(id:string){
+        return this.http.delete(this.URL + 'infrastructure/metrology/control_points/'+ id , {headers :this.header});
+    }
+
+    //Proteccion Process
+    getAllProteccion():Observable<Object[]>{
+      return this.http.get<Object[]>(this.URL + 'infrastructure/protection_actions' , {headers: this.header});
+    }
+    addProteccion(data:Object){
+       return this.http.post(this.URL + 'infrastructure/protection_actions' , data , {headers : this.header});
+    }
+    DeleteProteccion(id:string){
+        return this.http.delete(this.URL + 'infrastructure/protection_actions/'+ id , {headers :this.header});
     }
 
 

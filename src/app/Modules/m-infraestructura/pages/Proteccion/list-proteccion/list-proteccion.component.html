@@ -1,0 +1,48 @@
+<ngx-loading-x [show]="isloading"> </ngx-loading-x>
+
+<button class="btn btn-success btn-xs mr-1 ml-1" [routerLink]="['/infraes', 'addProteccion' ]">
+    <i class="fa fa-plus"></i> Agregar
+  </button>
+
+<table class="table mt-2">
+    <thead class="thead-light">
+      <tr>
+        <th scope="col">No.</th>
+        <th scope="col">Medida</th>
+        <th scope="col">Recursos Necesario</th>
+        <th scope="col">Cantidad</th>
+        <th scope="col">Precio</th>
+        <th scope="col">Vida Util</th>
+        <th scope="col">Pago Mensual</th>
+        <th scope="col">Importe Anual</th>
+        <th scope="col">Observaciones</th>
+        <th class="col-2" scope="col-3">Acciones</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr *ngFor="let i of listElemtos; let a = index">
+        <th scope="row">{{a + 1}}</th>
+        <td>{{i.name}}</td>
+        <td>{{i.resource}}</td>
+        <td>{{i.quantity}}</td>
+        <td>{{i.price_per_unit.amount}}</td>
+        <td>{{i.useful_life_months}}</td>
+        <td>{{i.monthly_payment.amount}}</td>
+        <td>{{i.annual_cost.amount}}</td>
+        <td>{{i.observations}}</td>
+        <td>
+          <button (click)="Delete(i.id)" class="btn btn-danger btn-sm mr-1 ml-1 ">
+            <i class="fa fa-trash"></i>
+          </button>
+          <button (click)="UpdateInvacion(i.id)" class="btn btn-info btn-sm mr-1 ml-1"
+            [routerLink]="['/mconocimiento/updateinovacion', i.id] ">
+            <i class="fa fa-history"></i>
+          </button>
+  
+  
+        </td>
+      </tr>
+  
+    </tbody>
+  </table>
+  

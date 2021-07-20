@@ -23,7 +23,7 @@
         <th scope="row">{{a + 1}}</th>
         <td>{{i.description}}</td>
         <td>{{i.quantity}}</td>
-        <td>{{i.price_per_unit.amout}}</td>
+        <td>{{i.price_per_unit.amount}}</td>
         <td>{{i.total_amount.amount}}</td>
         <td>{{i.dedication_percentage}}</td>
         <td>{{i.annual_wear_percentage}}</td>
@@ -33,7 +33,7 @@
             <i class="fa fa-trash"></i>
           </button>
           <button (click)="UpdateInvacion(i.id)" class="btn btn-info btn-sm mr-1 ml-1"
-            [routerLink]="['/mconocimiento/updateinovacion', i.id] ">
+            [routerLink]="['/infraes/updateUtiles', i.id] ">
             <i class="fa fa-history"></i>
           </button>
   

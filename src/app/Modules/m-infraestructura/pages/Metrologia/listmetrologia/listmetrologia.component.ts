@@ -37,4 +37,17 @@ export class ListmetrologiaComponent implements OnInit {
        })
   }
 
+ 
+   delte(id:string){
+         this.service.DeleteMetrologia(id).subscribe(res => {  
+          this.Toast.success("Operacion completada con exito.." , 'Boot MVP');         
+              this.isloading = true ;
+              this.getAll();
+          },error =>{
+               this.Toast.error("No se ha podido completar la operacion.." , 'Boot MVP'); 
+          })
+         }
+   
+
+
 }

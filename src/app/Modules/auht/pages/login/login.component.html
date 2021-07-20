@@ -21,8 +21,8 @@
       <div class="form-group mb-3 mt-5">
        <input type="text"  class="fadeIn second form-control" formControlName="email"  placeholder="Email">
        <div class="invalid" *ngIf="fgv.email.errors">
-        <strong *ngIf="fgv.email.errors.email">This field is format email</strong>
-        <strong *ngIf="fgv.email.errors.required">This field is required</strong>
+        <strong *ngIf="fgv.email.errors.email">Este campo tiene un formato email</strong>
+        <strong *ngIf="fgv.email.errors.required">Relle el campo...</strong>
      </div>
      </div>
 
@@ -30,9 +30,9 @@
      <div class="form-group mb-3 mt-5 ">
       <input type="password"  class="fadeIn third form-control" formControlName="password"  placeholder="password">
       <div class="invalid" *ngIf="fgv.password.errors">
-        <strong *ngIf="fgv.password.errors.required">This field is required</strong>
+        <strong *ngIf="fgv.password.errors.required">Relle el campo...</strong>
          <br>
-        <strong *ngIf="fgv.password.errors">this field si min lenght is 11</strong>
+        <strong *ngIf="fgv.password.errors">Minimo debe tener 11 caracteres</strong>
      </div>
     </div>
        

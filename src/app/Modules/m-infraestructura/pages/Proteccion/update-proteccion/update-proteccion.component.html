@@ -1,1 +1,77 @@
-<p>update-proteccion works!</p>
+<ngx-loading-x [show]="isloading"> </ngx-loading-x>
+<div class="wrapper fadeInDown">
+    <div id="formContent">
+          <form   (ngSubmit)="onUpdate()" role="form" [formGroup]="formsProteccion">
+            <div class="form-group mb-3 mt-5">
+                <div class="text-muted text-center mt-3">
+                  <h4>Actualizar Proteccio Proceso</h4>
+                </div>
+              </div>
+
+              <div class="form-group mb-3 mt-5">
+                <input type="text" class="fadeIn second form-control" formControlName="name" placeholder="Medida">
+                <div class="invalid" *ngIf=" formsProteccion.controls.name.errors">
+                  <strong *ngIf=" formsProteccion.controls.name.errors.required">Rellen el campo por favor...</strong>
+                </div>
+              </div>
+
+              <div class="form-group mb-3 mt-5">
+                <input type="text" class="fadeIn second form-control"  formControlName="recursos" placeholder="Recursos">
+                <div class="invalid" *ngIf=" formsProteccion.controls.recursos.errors">
+                  <strong *ngIf=" formsProteccion.controls.recursos.errors.required">Rellen el campo por favor...</strong>
+                 
+                </div>
+              </div>
+
+
+              <div class="form-group mb-3 mt-5">
+                <input type="number" class="fadeIn second form-control" formControlName="cantidad" placeholder="Cantidad">
+                <div class="invalid" *ngIf=" formsProteccion.controls.cantidad.errors">
+                  <strong *ngIf=" formsProteccion.controls.cantidad.errors.required">Rellen el campo por favor...</strong>
+                </div>
+              </div>
+
+
+              <div class="form-group mb-3 mt-5">
+                <input type="number" class="fadeIn second form-control" formControlName="precio" placeholder="Precio">
+                <div class="invalid" *ngIf=" formsProteccion.controls.precio.errors">
+                  <strong *ngIf=" formsProteccion.controls.precio.errors.required">Rellen el campo por favor...</strong>
+                </div>
+              </div>
+            
+
+
+              <div class="form-group mb-3 mt-5">
+                <input type="number" class="fadeIn second form-control" formControlName="vidaUtil" placeholder="Vida Util">
+                <div class="invalid" *ngIf=" formsProteccion.controls.vidaUtil.errors">
+                  <strong *ngIf=" formsProteccion.controls.vidaUtil.errors.required">Rellen el campo por favor...</strong>
+                </div>
+              </div>
+            
+            
+
+         
+              <div class="form-group mb-3 mt-5">
+                <input type="number" class="fadeIn second form-control" formControlName="pagomensual" placeholder="Pago Mensual">
+                <div class="invalid" *ngIf=" formsProteccion.controls.pagomensual.errors">
+                  <strong *ngIf=" formsProteccion.controls.pagomensual.errors.required">Rellen el campo por favor...</strong>
+                </div>
+              </div>
+              
+
+              <div class="form-group mb-3 mt-5">
+                <input type="text" class="fadeIn second form-control" formControlName="Observaciones" placeholder="Observaciones">
+                
+              </div>
+
+             
+           
+
+              <button type="submit" class="btn btn-info my-4 mr-2 fadeIn fourth" [disabled] = '!this.formsProteccion.valid'>Actualizar</button>
+              <button [routerLink]="['/infraes','listProteccio']" type="button"
+                class="btn btn-danger my-4 fadeIn fourth" >Cancelar</button>
+      
+          </form>
+    </div>
+</div>
+

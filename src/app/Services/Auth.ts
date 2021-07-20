@@ -28,8 +28,7 @@ export class AuthService {
     Autenticar(email:String  , token:String ){
          localStorage['email'] = email;
          localStorage['token'] = token;
-        
-          this._router.navigateByUrl('/home')
+          this._router.navigateByUrl('/')
     }
 
     logout(){

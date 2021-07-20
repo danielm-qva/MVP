@@ -20,7 +20,7 @@ export class LoginComponent implements OnInit {
 
   isActivar: boolean ;
 
-  constructor(private fb: FormBuilder, private serviceAuth: AuthService, private toastr: ToastrService) {
+  constructor(private fb: FormBuilder , private serviceAuth: AuthService, private toastr: ToastrService) {
 
   }
 

@@ -46,9 +46,6 @@ export class ListAFTangibleComponent implements OnInit {
       })
    }
 
-    updateAFtangible(id:string , data:Object){
-       
-    }
 
    showSucces(menss) {
     this.toast.success(menss, 'Boots MVP', {

@@ -9,13 +9,25 @@ import { MInfraestructuraService } from 'src/app/Services/m-infraestructura.serv
 })
 export class DetalleMetrologiaComponent implements OnInit {
 
+   isloading :boolean ;
    id:string ;
+   elem:any  ;
   constructor(public activeroute: ActivatedRoute , public services:MInfraestructuraService) { }
     
+
   ngOnInit(): void {
-        this.services.getByIdMetrologi(this.activeroute.snapshot.params.id).subscribe(res => {
-         console.log(res);
+
+    this.isloading = true ;
+        this.services.getByIdMetrologi(this.activeroute.snapshot.params.id).subscribe((res:any) => {
+          this.elem = JSON.stringify(res.data);
+          console.log(res.data.name);
+         setTimeout(()=>{
+          this.isloading = false ;
+         },800)
         })
+        
   }
+
+ 
 
 }

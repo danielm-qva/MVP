@@ -18,13 +18,13 @@ import { ListProteccionComponent } from './pages/Proteccion/list-proteccion/list
 import { UpdateProteccionComponent } from './pages/Proteccion/update-proteccion/update-proteccion.component';
 import { UpdateUtilesComponent } from './pages/UtilsTools/update-utiles/update-utiles.component';
 import { UpdateActivoFTComponent } from './pages/ActivoFijos-Tangibles/update-activo-ft/update-activo-ft.component';
-import { UpdateMetrologiaComponent } from './pages/Metrologia/update-metrologia/update-metrologia.component';
+
 import { DetalleMetrologiaComponent } from './pages/Metrologia/detalle-metrologia/detalle-metrologia.component';
 
 
 
 @NgModule({
-  declarations: [ AddAFTangibleComponent, ListAFTangibleComponent, AddUtilsToolsComponent, ListUtilsToolsComponent, AddmetrologiaComponent, ListmetrologiaComponent, AddProteccionComponent, ListProteccionComponent, UpdateProteccionComponent, UpdateUtilesComponent, UpdateActivoFTComponent, UpdateMetrologiaComponent, DetalleMetrologiaComponent],
+  declarations: [ AddAFTangibleComponent, ListAFTangibleComponent, AddUtilsToolsComponent, ListUtilsToolsComponent, AddmetrologiaComponent, ListmetrologiaComponent, AddProteccionComponent, ListProteccionComponent, UpdateProteccionComponent, UpdateUtilesComponent, UpdateActivoFTComponent, DetalleMetrologiaComponent],
   imports: [
     CommonModule,
     MInfraestructuraRoutingModule,

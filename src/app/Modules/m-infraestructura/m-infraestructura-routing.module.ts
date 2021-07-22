@@ -8,7 +8,6 @@ import { UpdateActivoFTComponent } from './pages/ActivoFijos-Tangibles/update-ac
 import { AddmetrologiaComponent } from './pages/Metrologia/addmetrologia/addmetrologia.component';
 import { DetalleMetrologiaComponent } from './pages/Metrologia/detalle-metrologia/detalle-metrologia.component';
 import { ListmetrologiaComponent } from './pages/Metrologia/listmetrologia/listmetrologia.component';
-import { UpdateMetrologiaComponent } from './pages/Metrologia/update-metrologia/update-metrologia.component';
 import { AddProteccionComponent } from './pages/Proteccion/add-proteccion/add-proteccion.component';
 import { ListProteccionComponent } from './pages/Proteccion/list-proteccion/list-proteccion.component';
 import { UpdateProteccionComponent } from './pages/Proteccion/update-proteccion/update-proteccion.component';
@@ -24,7 +23,6 @@ const routes: Routes = [
       {path : 'AddUtilstools' , component: AddUtilsToolsComponent},
        {path : 'listUtilstools' , component:ListUtilsToolsComponent},
        {path : 'addmetrologia' , component: AddmetrologiaComponent},
-       {path : 'updateMetrologia/:id' , component:UpdateMetrologiaComponent},
         {path : 'detallesMetrologia/:id' , component : DetalleMetrologiaComponent},
        {path : 'listametrologia' , component: ListmetrologiaComponent},
        {path : 'addProteccion' , component:AddProteccionComponent},

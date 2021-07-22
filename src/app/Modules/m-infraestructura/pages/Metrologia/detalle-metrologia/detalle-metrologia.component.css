@@ -1,0 +1,27 @@
+.wrapper {
+  display: flex;
+  align-items: center;
+  flex-direction: column;
+  justify-content: center;
+  width: 100%;
+  overflow-y: hidden !important;
+  min-height: 100%;
+  padding: 20px;
+}
+
+.fadeInDown {
+  -webkit-animation-name: fadeInDown;
+  animation-name: fadeInDown;
+  -webkit-animation-duration: 1s;
+  animation-duration: 1s;
+  -webkit-animation-fill-mode: both;
+  animation-fill-mode: both;
+}
+
+.Box {
+  border: 1px solid black;
+  border-radius: 19px;
+  box-shadow: 8px 10px slategray;
+  width: 80%;
+  height: 400px;
+}

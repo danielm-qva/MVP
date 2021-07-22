@@ -2,7 +2,8 @@ import { Component, OnInit } from '@angular/core';
 import { MInfraestructuraService } from 'src/app/Services/m-infraestructura.service';
 
 import {ToastrService} from 'ngx-toastr';
- 
+ import {NgbModal} from '@ng-bootstrap/ng-bootstrap';
+
 @Component({
   selector: 'app-listmetrologia',
   templateUrl: './listmetrologia.component.html',
@@ -12,9 +13,10 @@ export class ListmetrologiaComponent implements OnInit {
 
 
   listElemtos: any[] ;
+     detalles: Object[]=[];
   isloading:boolean ;
 
-  constructor(private service: MInfraestructuraService , public Toast : ToastrService) { }
+  constructor(private service: MInfraestructuraService , public Toast : ToastrService , public Modal : NgbModal) { }
 
   ngOnInit(): void {
        this.isloading = true ;
@@ -47,7 +49,18 @@ export class ListmetrologiaComponent implements OnInit {
                this.Toast.error("No se ha podido completar la operacion.." , 'Boot MVP'); 
           })
          }
-   
+     
+     async detalles_Metrologia(id:string , longContent){
+              this.isloading = true ;
+          await  this.service.getByIdMetrologi(id).subscribe((res:any) => {
+                    console.log(res);
+                     this.detalles.push(res.data);
+               })
+               setTimeout(()=>{
+                    this.isloading = false ;
+            } , 1000)
+               this.Modal.open(longContent);
+     }
 
 
 }

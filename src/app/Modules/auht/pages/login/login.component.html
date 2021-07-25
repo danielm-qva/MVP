@@ -19,7 +19,7 @@
 
 
       <div class="form-group mb-3 mt-5">
-       <input type="text"  class="fadeIn second form-control" formControlName="email"  placeholder="Email">
+       <input type="text"  class="fadeIn second form-control" formControlName="email"  placeholder="Corre electronico">
        <div class="invalid" *ngIf="fgv.email.errors">
         <strong *ngIf="fgv.email.errors.email">Este campo tiene un formato email</strong>
         <strong *ngIf="fgv.email.errors.required">Relle el campo...</strong>
@@ -28,7 +28,7 @@
 
 
      <div class="form-group mb-3 mt-5 ">
-      <input type="password"  class="fadeIn third form-control" formControlName="password"  placeholder="password">
+      <input type="password"  class="fadeIn third form-control" formControlName="password"  placeholder="Contraseña">
       <div class="invalid" *ngIf="fgv.password.errors">
         <strong *ngIf="fgv.password.errors.required">Relle el campo...</strong>
          <br>
@@ -37,8 +37,8 @@
     </div>
        
   
-        <button (click)="beginSession()" type="button"   class="btn btn-primary my-4 mr-2 fadeIn fourth">Login</button>
-        <button  routerLink="/auth/register" type="button"  class="btn btn-primary my-4 fadeIn fourth">Regiter</button>
+        <button (click)="beginSession()" type="button" [disabled]= '!fgValidator.valid'  class="btn btn-primary my-4 mr-2 fadeIn fourth">Acceder</button>
+        <button  routerLink="/auth/register" type="button"  class="btn btn-primary my-4 fadeIn fourth">Registro</button>
     
 
     </form>

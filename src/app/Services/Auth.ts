@@ -3,13 +3,14 @@ import { Injectable } from '@angular/core';
 import { Router } from '@angular/router';
 import { User } from '../Models/User';
 import { Observable } from 'rxjs';
+import { environment } from 'src/environments/environment';
 
 @Injectable({
     providedIn: 'root'
 })
 export class AuthService {
 
-    private URL = 'https://mvp-api-jc.herokuapp.com/api/';
+    private URL = environment.URL;
  
     public header = {
         "Content-Type": "application/json"
@@ -28,7 +29,8 @@ export class AuthService {
     Autenticar(email:String  , token:String ){
          localStorage['email'] = email;
          localStorage['token'] = token;
-          this._router.navigateByUrl('/')
+          this._router.navigateByUrl('/home');
+          location.assign('/home');
     }
 
     logout(){

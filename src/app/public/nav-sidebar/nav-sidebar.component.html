@@ -1,11 +1,11 @@
 <div  class="page-wrapper chiller-theme toggled">
-  <a id="show-sidebar" class="btn btn-sm btn-dark" href="#">
+  <a id="show-sidebar" class="btn btn-sm btn-dark">
     <i class="fas fa-bars"></i>
   </a>
 
-  <nav   *ngIf="service.isAutenticar()" id="sidebar" class="sidebar-wrapper">
+  <nav *ngIf="service.isAutenticar()" id="sidebar" class="sidebar-wrapper">
    
-    <div class="sidebar-content">
+    <div class="sidebar-content" >
       
       <div class="sidebar-brand">
         <a>MVP</a>
@@ -40,14 +40,14 @@
           </li>
           <li>
             <a routerLink="admin/process/listProcess">
-              <i class="fa fa-calendar"></i>
+              <i class="fa fa-folder"></i>
               <span>Procesos</span>
             </a>
           </li>
          
           <li class="sidebar-dropdown">
             <a >
-              <i class="fa  fa-calendar"></i>
+              <i class="fa fa-folder"></i>
               <span>Modulo Proveedor</span>
               <span class="badge badge-pill badge-warning"></span>
             </a>
@@ -69,7 +69,7 @@
 
           <li class="sidebar-dropdown">
             <a >
-              <i class="fa  fa-calendar"></i>
+              <i class="fa  fa-folder"></i>
               <span>Modulo Infraestructura</span>
               <span class="badge badge-pill badge-warning"></span>
             </a>
@@ -98,7 +98,7 @@
 
           <li class="sidebar-dropdown">
             <a >
-              <i class="fa  fa-calendar"></i>
+              <i class="fa fa-folder"></i>
               <span>Modulo Conocimiento</span>
               <span class="badge badge-pill badge-warning"></span>
             </a>
@@ -119,7 +119,7 @@
           
           <li class="sidebar-dropdown">
             <a >
-              <i class="fa fa-tachometer-alt"></i>
+              <i class="fa fa-folder"></i>
               <span>Modulo Producto</span>
               <span class="badge badge-pill badge-warning"></span>
             </a>
@@ -138,62 +138,16 @@
             </div>
           </li>
 
-          <li class="sidebar-dropdown">
-            <a href="#">
-              <i class="fa fa-shopping-cart"></i>
-              <span>E-commerce</span>
-              <span class="badge badge-pill badge-danger">3</span>
-            </a>
-            <div class="sidebar-submenu">
-              <ul>
-                <li>
-                  <a href="#">Products
-
-                  </a>
-                </li>
-                <li>
-                  <a href="#">Orders</a>
-                </li>
-                <li>
-                  <a href="#">Credit cart</a>
-                </li>
-              </ul>
-            </div>
-          </li>
-
-      
-
-          <li class="header-menu">
-            <span>Extra</span>
-          </li>
           
-          <li>
-            <a href="#">
-              <i class="fa fa-book"></i>
-              <span>Documentation</span>
-              <span class="badge badge-pill badge-primary">Beta</span>
-            </a>
-          </li>
 
-          <li>
-            <a href="#">
-              <i class="fa fa-calendar"></i>
-              <span>Calendar</span>
-            </a>
-          </li>
-
-          <li>
-            <a href="#">
-              <i class="fa fa-folder"></i>
-              <span>Examples</span>
-            </a>
-          </li>
+    
         </ul>
       </div>
       <!-- sidebar-menu  -->
     </div>
     <!-- sidebar-content  -->
   </nav>
+
   <!-- sidebar-wrapper  -->
   <main class="page-content">
     <div class="container-fluid">

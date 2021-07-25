@@ -99,7 +99,7 @@ body {
 }
 
 .page-wrapper.toggled #show-sidebar {
-  left: -40px;
+  left: -50px;
 }
 /*----------------sidebar-wrapper----------------*/
 
@@ -129,7 +129,7 @@ body {
   max-height: calc(100% - 30px);
   height: calc(100% - 30px);
   overflow-y: auto;
-  position: relative;
+  position: absolute;
 }
 
 .sidebar-content.desktop {

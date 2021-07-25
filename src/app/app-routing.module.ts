@@ -13,7 +13,7 @@ const routes: Routes = [
   { path: 'admin', canActivate: [AuhtCantActive], loadChildren: () => import('./Modules/Admin/admin.module').then(m => m.AdminModule) },
   { path: 'products', canActivate: [AuhtCantActive], loadChildren: () => import('./Modules/m-client/m-client.module').then(m => m.MClientModule) },
   { path: 'home', component: HomComponent },
-  { path: '', component: HomComponent },
+  { path: '', component: LoginComponent , pathMatch : 'full' },
   { path: 'infraes', loadChildren: () => import('./Modules/m-infraestructura/m-infraestructura.module').then(m => m.MInfraestructuraModule) },
   { path: "**", canActivate: [AuhtCantActive], component: HomComponent }
 

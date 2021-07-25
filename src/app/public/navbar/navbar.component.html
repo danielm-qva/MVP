@@ -18,15 +18,15 @@
             <a class="nav-link" routerLink="/home">Home</a>
           </li> 
           <li class="nav-item">
-            <a class="nav-link" href="#">About</a>
+            <a class="nav-link" >Acerca </a>
           </li> 
           <li class="nav-item">
-            <a class="nav-link" href="#">Conceptos</a>
+            <a class="nav-link" >Conceptos</a>
           </li> 
         
     
           <li class="nav-item" *ngIf="!service.isAutenticar()">
-            <button class="btn btn-outline-success my-2 my-sm-0" routerLink="auth/login"> login</button>
+            <button class="btn btn-outline-success my-2 my-sm-0" routerLink="auth/login"> Acceso</button>
           </li>
           
           <li *ngIf="service.isAutenticar()" class="nav-item dropdown">
@@ -37,9 +37,8 @@
               </a>
               
               <div class="dropdown-menu">
-                <a class="dropdown-item" href="#">Login</a>
-                <a class="dropdown-item" href="#"></a>
-                <a class="dropdown-item" (click) ="service.logout()" >Logout</a>
+                <a class="dropdown-item" ></a>
+                <a class="dropdown-item" (click) ="service.logout()" >Salir</a>
               </div>
             </div>
           </li>

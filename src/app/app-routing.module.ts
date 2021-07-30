@@ -14,7 +14,8 @@ const routes: Routes = [
   { path: 'products', canActivate: [AuhtCantActive], loadChildren: () => import('./Modules/m-client/m-client.module').then(m => m.MClientModule) },
   { path: 'home', component: HomComponent },
   { path: '', component: LoginComponent , pathMatch : 'full' },
-  { path: 'infraes', loadChildren: () => import('./Modules/m-infraestructura/m-infraestructura.module').then(m => m.MInfraestructuraModule) },
+  { path: 'infraes',canActivate:[AuhtCantActive] , loadChildren: () => import('./Modules/m-infraestructura/m-infraestructura.module').then(m => m.MInfraestructuraModule) },
+   {path : 'mambietal' ,canActivate:[AuhtCantActive] , loadChildren: () => import('./Modules/m-ambiental/m-ambiental.module').then(m => m.MAmbientalModule)},
   { path: "**", canActivate: [AuhtCantActive], component: HomComponent }
 
 ];

@@ -1,12 +1,10 @@
-<div  class="page-wrapper chiller-theme toggled">
+<div class="page-wrapper chiller-theme toggled">
   <a id="show-sidebar" class="btn btn-sm btn-dark">
     <i class="fas fa-bars"></i>
   </a>
 
   <nav *ngIf="service.isAutenticar()" id="sidebar" class="sidebar-wrapper">
-   
-    <div class="sidebar-content" >
-      
+    <div class="sidebar-content">
       <div class="sidebar-brand">
         <a>MVP</a>
         <div id="close-sidebar">
@@ -16,12 +14,15 @@
 
       <div class="sidebar-header">
         <div class="user-pic">
-          <img class="img-responsive img-rounded" src="./../../../assets/img/user.jpg"
-            alt="User picture">
+          <img
+            class="img-responsive img-rounded"
+            src="./../../../assets/img/user.jpg"
+            alt="User picture"
+          />
         </div>
         <div class="user-info">
           <span class="user-name">
-            <strong>{{email}}</strong>
+            <strong>{{ email }}</strong>
           </span>
           <span class="user-role">Administrator</span>
           <span class="user-status">
@@ -30,11 +31,9 @@
           </span>
         </div>
       </div>
-    
-     
+
       <div class="sidebar-menu">
         <ul>
-
           <li class="header-menu">
             <span>General</span>
           </li>
@@ -44,9 +43,9 @@
               <span>Procesos</span>
             </a>
           </li>
-         
+
           <li class="sidebar-dropdown">
-            <a >
+            <a>
               <i class="fa fa-folder"></i>
               <span>Modulo Proveedor</span>
               <span class="badge badge-pill badge-warning"></span>
@@ -54,50 +53,55 @@
             <div class="sidebar-submenu">
               <ul>
                 <li>
-                  <a [routerLink]="[ 'admin' , 'provider', 'listProvider']">Lista Provedores 
-                   
+                  <a [routerLink]="['admin', 'provider', 'listProvider']"
+                    >Lista Provedores
                   </a>
                 </li>
                 <li>
-                  <a [routerLink]="[ 'admin' , 'provider', 'list_provi_evalua']">Lista Evalucaiones </a>
+                  <a [routerLink]="['admin', 'provider', 'list_provi_evalua']"
+                    >Lista Evalucaiones
+                  </a>
                 </li>
-            
               </ul>
             </div>
           </li>
 
-
           <li class="sidebar-dropdown">
-            <a >
-              <i class="fa  fa-folder"></i>
+            <a>
+              <i class="fa fa-folder"></i>
               <span>Modulo Infraestructura</span>
               <span class="badge badge-pill badge-warning"></span>
             </a>
             <div class="sidebar-submenu">
               <ul>
                 <li>
-                  <a [routerLink]="[ 'infraes' , 'listAFtangible']">Activo Fijos Tangibles 
-                      </a>
+                  <a [routerLink]="['infraes', 'listAFtangible']"
+                    >Activo Fijos Tangibles
+                  </a>
                 </li>
                 <li>
-                  <a [routerLink]="['infraes' , 'listUtilstools']" >Utiles y Herramientas</a>
+                  <a [routerLink]="['infraes', 'listUtilstools']"
+                    >Utiles y Herramientas</a
+                  >
                 </li>
 
                 <li>
-                  <a [routerLink]="['infraes' , 'listametrologia']" >Metrologia</a>
+                  <a [routerLink]="['infraes', 'listametrologia']"
+                    >Metrologia</a
+                  >
                 </li>
 
                 <li>
-                  <a [routerLink]="['infraes' , 'listProteccio']" >Proteccion Proceso</a>
+                  <a [routerLink]="['infraes', 'listProteccio']"
+                    >Proteccion Proceso</a
+                  >
                 </li>
-              
               </ul>
             </div>
           </li>
 
-
           <li class="sidebar-dropdown">
-            <a >
+            <a>
               <i class="fa fa-folder"></i>
               <span>Modulo Conocimiento</span>
               <span class="badge badge-pill badge-warning"></span>
@@ -105,20 +109,21 @@
             <div class="sidebar-submenu">
               <ul>
                 <li>
-                  <a [routerLink]="[ '/mconocimiento' , 'listinovacion']">Lista Inovacion 
-                   
+                  <a [routerLink]="['/mconocimiento', 'listinovacion']"
+                    >Lista Inovacion
                   </a>
                 </li>
                 <li>
-                  <a [routerLink]="[ '/mconocimiento' , 'addinovacion']">Agragar Inovacion </a>
+                  <a [routerLink]="['/mconocimiento', 'addinovacion']"
+                    >Agragar Inovacion
+                  </a>
                 </li>
-            
               </ul>
             </div>
           </li>
-          
+
           <li class="sidebar-dropdown">
-            <a >
+            <a>
               <i class="fa fa-folder"></i>
               <span>Modulo Producto</span>
               <span class="badge badge-pill badge-warning"></span>
@@ -126,21 +131,46 @@
             <div class="sidebar-submenu">
               <ul>
                 <li>
-                  <a [routerLink]="['products', 'addproducts']">Agregar Producto
-                   
+                  <a [routerLink]="['products', 'addproducts']"
+                    >Agregar Producto
                   </a>
                 </li>
                 <li>
-                  <a [routerLink]="['products', 'listproducts']">Listar Prodcutos</a>
+                  <a [routerLink]="['products', 'listproducts']"
+                    >Listar Prodcutos</a
+                  >
                 </li>
-            
               </ul>
             </div>
           </li>
 
-          
+          <li class="sidebar-dropdown">
+            <a>
+              <i class="fa fa-apple-pay"></i>
+              <span>Modulo Ambietal</span>
+              <span class="badge badge-pill badge-warning"></span>
+            </a>
+            <div class="sidebar-submenu">
+              <ul>
+                <li>
+                  <a [routerLink]="['mambietal', 'listwMaterials']"
+                    >Residuos de Materiales
+                  </a>
+                </li>
 
-    
+                <li>
+                  <a [routerLink]="['mambietal', 'listWasteProcess']"
+                    >Desprecio de Producto Proceso
+                  </a>
+                </li>
+                <li>
+                  <a [routerLink]="['mambietal', 'listResiduals']"
+                    >Emanaciones y Residuales
+                  </a>
+                </li>
+              </ul>
+            </div>
+          </li>
         </ul>
       </div>
       <!-- sidebar-menu  -->
@@ -151,10 +181,8 @@
   <!-- sidebar-wrapper  -->
   <main class="page-content">
     <div class="container-fluid">
- 
       <div class="row">
         <div class="col">
-
           <router-outlet></router-outlet>
         </div>
       </div>

@@ -1,4 +1,4 @@
-import { Component, OnInit , OnDestroy, ComponentRef } from '@angular/core';
+import { Component, OnInit  } from '@angular/core';
 import { AuthService } from '../../Services/Auth';
 
 @Component({
@@ -16,18 +16,6 @@ export class NavSidebarComponent implements OnInit {
 
   ngOnInit(): void {
      this.email = localStorage.getItem("email");
-        
-        console.log(document.getElementById('sidebar'));
-    //  setInterval(()=> {
-    //        if(this.service.isAutenticar()){
-    //             this.id = "sidebar"
-    //        }
-    //        else
-    //        this.id = "close-sidebar"
-    //  } , 300);
- 
-    //      document.getElementById('#id').hidden;
-
   } 
 
      
